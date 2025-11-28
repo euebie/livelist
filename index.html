@@ -2930,12 +2930,8 @@
   }
 
   function updateSongCount(count) {
-    songCountEl.textContent = `총 ${count.toLocaleString()}곡 / 현재 ${currentLength}곡`;
+    songCountEl.textContent = `총 ${count.toLocaleString()}곡`;
   }
-    
-  // 페이지 처음 로드될 때: 필터 없이 전체 곡 수 기준
-  document.addEventListener("DOMContentLoaded", () => {
-  updateSongCount(songs.length);
 
   function renderTable(list) {
     tbody.innerHTML = "";
@@ -3043,6 +3039,7 @@
 </script>
 </body>
 </html>
+
 
 
 
