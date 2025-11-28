@@ -379,15 +379,75 @@
       }
 
 
-    @media (max-width: 640px) {
-      th:nth-child(1),
-      td:nth-child(1) {
-        display: none;
+      /* 📱 모바일 최적화 — 카드형 리스트 */
+      @media (max-width: 640px) {
+
+            table,
+            thead,
+            tbody,
+            th,
+            td,
+            tr {
+                  display: block;
+            }
+
+            /* 테이블 margin/padding 보정 */
+            table {
+                  width: 100%;
+                  border-collapse: collapse;
+            }
+
+            /* 헤더 숨김 */
+            thead {
+                  display: none;
+            }
+
+            /* 카드형 리스트 */
+            tbody tr {
+                  background: var(--card-bg, #fff);
+                  margin-bottom: 10px;
+                  padding: 10px 12px;
+                  border-radius: 12px;
+                  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+            }
+
+            /* 각 행 안에서 항목 레이블 표시 */
+            td {
+                  display: flex;
+                  justify-content: space-between;
+                  gap: 8px;
+                  font-size: 0.9rem;
+                  padding: 4px 0;
+                  border: none;
+            }
+
+            /* 첫 번째 td (#)는 숨김 */
+            td:nth-child(1) {
+                  display: none;
+            }
+
+            /* 레이블 추가 */
+            td:nth-child(2)::before {
+                  content: "가수";
+                  font-weight: 700;
+            }
+
+            td:nth-child(3)::before {
+                  content: "제목";
+                  font-weight: 700;
+            }
+
+            td:nth-child(4)::before {
+                  content: "장르";
+                  font-weight: 700;
+            }
+
+            td:nth-child(5)::before {
+                  content: "비고";
+                  font-weight: 700;
+            }
       }
-      .app {
-        padding: 12px;
-      }
-    }
+
 
       /* 헤더 타이틀 크기 조정 */
       header .header-titles h1:nth-child(1) {
@@ -3055,3 +3115,4 @@ function getFilteredSongs() {
   </script>
 </body>
 </html>
+
