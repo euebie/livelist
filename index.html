@@ -379,9 +379,29 @@
       }
 
 
-      /* 📱 모바일 최적화 — 카드형 리스트 */
+          /* 📱 모바일 최적화 — 카드형 리스트 */
       @media (max-width: 640px) {
 
+            /* 전체 여백 살짝 줄이기 */
+            .app {
+                  padding: 12px 8px;
+            }
+
+            /* 검색 / 셀렉트 / 버튼 세로 정렬 */
+            .controls {
+                  flex-direction: column;
+                  align-items: stretch;
+                  gap: 8px;
+            }
+
+            .controls input,
+            .controls select,
+            .controls button {
+                  width: 100%;
+                  font-size: 0.9rem;
+            }
+
+            /* 테이블 요소들을 블록으로 바꿔서 카드처럼 */
             table,
             thead,
             tbody,
@@ -391,60 +411,68 @@
                   display: block;
             }
 
-            /* 테이블 margin/padding 보정 */
-            table {
-                  width: 100%;
-                  border-collapse: collapse;
-            }
-
-            /* 헤더 숨김 */
+            /* 헤더는 모바일에선 숨기기 */
             thead {
                   display: none;
             }
 
-            /* 카드형 리스트 */
+            /* 각 행을 카드처럼 보이게 */
             tbody tr {
-                  background: var(--card-bg, #fff);
+                  background: #ffffff;
                   margin-bottom: 10px;
                   padding: 10px 12px;
                   border-radius: 12px;
-                  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+                  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.06);
             }
 
-            /* 각 행 안에서 항목 레이블 표시 */
+            /* 다크모드일 때 카드 배경 */
+            body[data-theme="dark"] tbody tr {
+                  background: #020617;
+                  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.7);
+            }
+
+            /* 각 셀을 "레이블 : 값" 형태로 */
             td {
                   display: flex;
                   justify-content: space-between;
                   gap: 8px;
-                  font-size: 0.9rem;
                   padding: 4px 0;
                   border: none;
+                  font-size: 0.9rem;
             }
 
-            /* 첫 번째 td (#)는 숨김 */
+            /* 첫 번째 열(# 번호)은 모바일에선 숨김 */
             td:nth-child(1) {
                   display: none;
             }
 
-            /* 레이블 추가 */
+            /* 레이블 쪽 텍스트 스타일 */
+            td::before {
+                  flex: 0 0 auto;
+                  margin-right: 8px;
+                  font-weight: 600;
+                  color: #64748b;
+            }
+
+            body[data-theme="dark"] td::before {
+                  color: #9ca3af;
+            }
+
+            /* 각 컬럼에 맞는 레이블 붙이기 */
             td:nth-child(2)::before {
                   content: "가수";
-                  font-weight: 700;
             }
 
             td:nth-child(3)::before {
                   content: "제목";
-                  font-weight: 700;
             }
 
             td:nth-child(4)::before {
                   content: "장르";
-                  font-weight: 700;
             }
 
             td:nth-child(5)::before {
                   content: "비고";
-                  font-weight: 700;
             }
       }
 
@@ -3115,4 +3143,5 @@ function getFilteredSongs() {
   </script>
 </body>
 </html>
+
 
