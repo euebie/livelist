@@ -381,12 +381,10 @@
 
       @media (max-width: 640px) {
 
-            /* 전체 패딩 살짝 줄이기 (있으면 유지해도 됨) */
             .app {
                   padding: 12px 10px;
             }
 
-            /* 검색 + 필터 한 줄 (7:3), 버튼은 아래 한 줄 */
             .controls {
                   display: flex;
                   flex-wrap: wrap;
@@ -394,19 +392,16 @@
                   gap: 8px;
             }
 
-            /* 검색창: 60% */
             .controls input {
-                  flex: 0 0 70%;
+                  flex: 0 0 60%;
                   font-size: 0.9rem;
             }
 
-            /* 필터 셀렉트: 30% */
             .controls select {
                   flex: 0 0 30%;
                   font-size: 0.9rem;
             }
 
-            /* 버튼은 아랫줄에서 가로 100% */
             .controls button {
                   flex: 0 0 100%;
                   font-size: 0.9rem;
@@ -3105,6 +3100,7 @@ function getFilteredSongs() {
   </script>
 </body>
 </html>
+
 
 
 
