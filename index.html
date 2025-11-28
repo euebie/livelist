@@ -2957,7 +2957,8 @@
         <td>${genreTags}</td>
         <td>${song.note || ""}</td>
       `;
-
+      
+      document.getElementById("songCount").textContent =`총 ${songs.length}곡 / 필터링: ${filtered.length}곡`;
       tbody.appendChild(tr);
     });
   }
@@ -3039,6 +3040,7 @@
 </script>
 </body>
 </html>
+
 
 
 
