@@ -2929,8 +2929,11 @@
     return GENRE_CLASS[code] || "tag tag-etc";
   }
 
-  function updateSongCount(count) {
-    songCountEl.textContent = `총 ${count.toLocaleString()}곡`;
+  function updateSongCount(filteredCount) {
+    const totalCount = songs.length; // 전체 곡 수
+
+    // 총 전체 곡 수 / 필터링된 곡 수
+    songCountEl.textContent = `총 ${totalCount.toLocaleString()}곡 / 현재 ${filteredCount.toLocaleString()}곡`;
   }
 
   function renderTable(list) {
@@ -3038,6 +3041,7 @@
 </script>
 </body>
 </html>
+
 
 
 
