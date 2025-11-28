@@ -379,25 +379,36 @@
       }
 
 
-      /* 📱 모바일 — 가수 / 제목만 표시 */
       @media (max-width: 640px) {
 
-            /* 전체 패딩 살짝 줄이기 */
+            /* 전체 패딩 살짝 줄이기 (있으면 유지해도 됨) */
             .app {
                   padding: 12px 10px;
             }
 
-            /* 검색 / 필터 위아래로 정렬 */
+            /* 검색 + 필터 한 줄 (7:3), 버튼은 아래 한 줄 */
             .controls {
-                  flex-direction: column;
-                  align-items: stretch;
+                  display: flex;
+                  flex-wrap: wrap;
+                  align-items: center;
                   gap: 8px;
             }
 
-            .controls input,
-            .controls select,
+            /* 검색창: 70% */
+            .controls input {
+                  flex: 0 0 70%;
+                  font-size: 0.9rem;
+            }
+
+            /* 필터 셀렉트: 30% */
+            .controls select {
+                  flex: 0 0 30%;
+                  font-size: 0.9rem;
+            }
+
+            /* 버튼은 아랫줄에서 가로 100% */
             .controls button {
-                  width: 100%;
+                  flex: 0 0 100%;
                   font-size: 0.9rem;
             }
 
@@ -3094,6 +3105,7 @@ function getFilteredSongs() {
   </script>
 </body>
 </html>
+
 
 
 
