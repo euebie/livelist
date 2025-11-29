@@ -569,6 +569,9 @@
     const filtered = getFilteredSongs();
     renderTable(filtered);
     updateSongCount(filtered.length);
+
+    // 필터/검색 결과가 바뀔 때마다 랜덤 박스 초기화
+    resetRandomBox();
   }
 
   // 검색/필터 이벤트
@@ -624,6 +627,7 @@
 </script>
 </body>
 </html>
+
 
 
 
