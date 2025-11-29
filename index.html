@@ -479,6 +479,12 @@
   const themeToggle = document.getElementById("themeToggle");
   const bodyEl = document.body;
 
+  // 랜덤 박스 초기화
+  function resetRandomBox() {
+    randomBox.classList.add("hidden");
+    randomText.textContent = "";
+  }
+    
   // 장르 라벨 / 태그 클래스 매핑
   const GENRE_LABEL = {
     kpop: "한국",
@@ -618,5 +624,6 @@
 </script>
 </body>
 </html>
+
 
 
