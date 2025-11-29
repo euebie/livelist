@@ -564,7 +564,7 @@
     return `${before}<span class="highlight">${match}</span>${after}`;
   }
 
-  function renderTable(list) {
+  function renderTable(list, keyword = "") {
     tbody.innerHTML = "";
 
     if (!list.length) {
@@ -677,6 +677,7 @@
 </script>
 </body>
 </html>
+
 
 
 
