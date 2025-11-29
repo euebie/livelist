@@ -2,1231 +2,473 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <title>노래 검색 & 랜덤 추천</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
-    :root {
-      --bg: #0f172a;
-      --bg-soft: #1e293b;
-      --bg-softer: #111827;
-      --bg-card: #020617;
-      --border-subtle: #1f2937;
-      --accent: #38bdf8;
-      --accent-soft: rgba(56, 189, 248, 0.15);
-      --accent-strong: #0ea5e9;
-      --text: #e5e7eb;
-      --text-soft: #9ca3af;
-      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.85);
-      --radius-xl: 24px;
-      --radius-lg: 999px;
-      --radius-card: 18px;
-      --transition-fast: 0.18s ease-out;
-      --transition-normal: 0.2s ease-out;
-      --tag-kpop: #22c55e;
-      --tag-jpop: #8b5cf6;
-      --tag-pop: #f97316;
-      --tag-ani: #eab308;
-      --tag-pay: #ec4899;
-      --tag-etc: #6b7280;
-    }
+  <title>Euebie Live List</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+  * {
+    box-sizing: border-box;
+  }
 
-    body[data-theme="light"] {
-      --bg: #f3f4f6;
-      --bg-soft: #ffffff;
-      --bg-softer: #e5e7eb;
-      --bg-card: #ffffff;
-      --border-subtle: #d1d5db;
-      --accent: #0ea5e9;
-      --accent-soft: rgba(37, 99, 235, 0.08);
-      --accent-strong: #2563eb;
-      --text: #111827;
-      --text-soft: #4b5563;
-      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.08);
-    }
+  body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #eef1f4; /* 부드러운 밝은 회색 (라이트 기본) */
+    color: #1e293b;      /* 너무 강하지 않은 진회색 */
+  }
 
-    * {
-      box-sizing: border-box;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        sans-serif;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-    }
+  .app {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 16px 16px 40px;
+  }
 
-    body {
-      margin: 0;
-      min-height: 100vh;
-      background: radial-gradient(circle at top left, #0f172a 0, #020617 50%);
-      background-color: var(--bg);
-      color: var(--text);
-      display: flex;
-      align-items: stretch;
-      justify-content: center;
-      padding: 32px 16px;
-    }
+  header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
 
+  header h1 {
+    margin: 0;
+  }
+
+  header p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #475569;
+  }
+
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .header-titles {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  /* 헤더 타이틀 크기 조정 */
+  header .header-titles h1:nth-child(1) {
+    font-size: 1.6rem; /* 가장 큼 */
+    font-weight: 700;
+  }
+
+  header .header-titles h1:nth-child(2) {
+    font-size: 1.2rem; /* 첫 번째보다 살짝 작게 */
+    font-weight: 600;
+    opacity: 0.7;
+  }
+
+  header .header-titles p#songCount {
+    font-size: 1rem; /* h1보단 작고 기본 p보단 큼 */
+    margin-top: 4px;
+  }
+
+  .theme-toggle {
+    align-self: flex-start;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid #d1d5db;
+    background: #f9fafb;
+    font-size: 0.8rem;
+    cursor: pointer;
+  }
+
+  .theme-toggle:hover {
+    opacity: 0.9;
+  }
+
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .controls input,
+  .controls select,
+  .controls button {
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    font-size: 0.9rem;
+  }
+
+  .controls input {
+    flex: 1 1 160px;
+    background: #ffffff;
+    color: #1e293b;
+  }
+
+  .controls input::placeholder {
+    color: #64748b;
+  }
+
+  .controls select {
+    flex: 0 0 130px;
+    background: #ffffff;
+    color: #1e293b;
+  }
+
+  .controls button {
+    flex: 0 0 auto;
+    cursor: pointer;
+    background: #111827;
+    color: #ffffff;
+    font-weight: 500;
+    border: 1px solid #cbd5e1;
+    transition: transform 0.05s ease, box-shadow 0.05s ease, opacity 0.1s ease;
+  }
+
+  .controls button:hover {
+    opacity: 0.9;
+  }
+
+  .controls button:active {
+    transform: translateY(1px);
+    box-shadow: none;
+  }
+
+  .random-result {
+    margin-bottom: 12px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    font-size: 0.9rem;
+  }
+
+  .random-title {
+    font-size: 0.85rem;
+    color: #6b7280;
+    margin-bottom: 4px;
+  }
+
+  .random-main {
+    font-weight: 600;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .table-wrapper {
+    background: #f8fafc;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+    border: 1px solid #d1d5db;
+    overflow: hidden;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+  }
+
+  thead {
+    background: #e2e8f0;
+    color: #1e293b;
+  }
+
+  th,
+  td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #f1f5f9;
+    text-align: left;
+    white-space: nowrap;
+  }
+
+  th:nth-child(3),
+  td:nth-child(3) {
+    white-space: normal;
+  }
+
+  tbody tr:nth-child(odd) {
+    background: #ffffff;
+  }
+
+  tbody tr:nth-child(even) {
+    background: #f3f4f6;
+  }
+
+  tbody tr:hover {
+    background: #e0e7ff; /* 라벤더 톤 강조 */
+  }
+
+  .empty-state {
+    padding: 24px 16px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #6b7280;
+  }
+
+  .footer-note {
+    margin-top: 12px;
+    font-size: 0.75rem;
+    color: #9ca3af;
+  }
+
+  /* 태그 공통 */
+  .tag {
+    font-weight: 500;
+    border-radius: 6px;
+    padding: 3px 6px;
+    display: inline-block;
+  }
+
+  .tag-kpop { background: #ffd6e7; color: #c2185b; }
+  .tag-jpop { background: #d7ecff; color: #1565c0; }
+  .tag-pop  { background: #fff1c9; color: #b26a00; }
+  .tag-ani  { background: #d0f0ff; color: #0077b6; }
+  .tag-pay  { background: #e4f7d2; color: #558b2f; }
+  .tag-etc  { background: #ede7f6; color: #5e35b1; }
+
+  /* ===== 다크 모드 ===== */
+  body[data-theme="dark"] {
+    background: #111827;
+    color: #e5e7eb;
+  }
+
+  body[data-theme="dark"] .app {
+    background: transparent;
+  }
+
+  body[data-theme="dark"] header h1 {
+    color: #f9fafb;
+  }
+
+  body[data-theme="dark"] header p,
+  body[data-theme="dark"] .footer-note {
+    color: #9ca3af;
+  }
+
+  body[data-theme="dark"] .controls input,
+  body[data-theme="dark"] .controls select {
+    background: #020617;
+    border-color: #4b5563;
+    color: #e5e7eb;
+  }
+
+  body[data-theme="dark"] .controls input::placeholder {
+    color: #6b7280;
+  }
+
+  body[data-theme="dark"] .controls button {
+    background: #1f2937;
+    color: #e5e7eb;
+    border: 1px solid #4b5563;
+  }
+
+  body[data-theme="dark"] .random-result {
+    background: #020617;
+    border-color: #1f2937;
+    color: #e5e7eb;
+  }
+
+  body[data-theme="dark"] .random-title {
+    color: #9ca3af;
+  }
+
+  body[data-theme="dark"] .table-wrapper {
+    background: #020617;
+    border-color: #1f2937;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.8);
+  }
+
+  body[data-theme="dark"] table {
+    font-size: 0.9rem;
+  }
+
+  body[data-theme="dark"] thead {
+    background: #1e293b;
+    color: #f8fafc;
+    font-weight: 700;
+    border-bottom: 2px solid #64748b;
+  }
+
+  body[data-theme="dark"] th {
+    color: #f8fafc !important;
+  }
+
+  body[data-theme="dark"] td {
+    border-bottom-color: #1f2937;
+  }
+
+  body[data-theme="dark"] tbody tr:nth-child(odd) {
+    background: #020617;
+  }
+
+  body[data-theme="dark"] tbody tr:nth-child(even) {
+    background: #050816;
+  }
+
+  body[data-theme="dark"] tbody tr:hover {
+    background: #0f172a;
+  }
+
+  body[data-theme="dark"] .empty-state {
+    color: #9ca3af;
+    background: transparent;
+  }
+
+  /* 다크 모드 태그 색감 진하게 */
+  body[data-theme="dark"] .tag-kpop {
+    background: #be185d;
+    color: #ffffff;
+  }
+
+  body[data-theme="dark"] .tag-jpop {
+    background: #1e3a8a;
+    color: #dbeafe;
+  }
+
+  body[data-theme="dark"] .tag-pop {
+    background: #b45309;
+    color: #fff7ed;
+  }
+
+  body[data-theme="dark"] .tag-ani {
+    background: #0c4a6e;
+    color: #bae6fd;
+  }
+
+  body[data-theme="dark"] .tag-pay {
+    background: #166534;
+    color: #dcfce7;
+  }
+
+  body[data-theme="dark"] .tag-etc {
+    background: #4c1d95;
+    color: #ede9fe;
+  }
+
+  /* ===== 반응형 (모바일) ===== */
+  @media (max-width: 640px) {
     .app {
-      width: 100%;
-      max-width: 1120px;
-      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.06), transparent 65%), var(--bg-soft);
-      border-radius: 28px;
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      box-shadow: var(--shadow-soft);
-      padding: 24px 22px 24px 22px;
-      display: grid;
-      grid-template-columns: minmax(0, 5fr) minmax(0, 3.8fr);
-      gap: 22px;
-      position: relative;
-      overflow: hidden;
+      padding: 12px 10px;
     }
 
-    .app::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at top right, rgba(96, 165, 250, 0.12), transparent 60%),
-        radial-gradient(circle at bottom left, rgba(236, 72, 153, 0.07), transparent 60%);
-      pointer-events: none;
-      opacity: 0.9;
-    }
-
-    .app-inner {
-      position: relative;
-      z-index: 1;
-      display: contents;
-    }
-
-    h1 {
-      font-size: 28px;
-      margin: 0 0 8px 0;
-      letter-spacing: -0.04em;
-      display: flex;
+    .controls {
       align-items: center;
       gap: 8px;
     }
 
-    h1 .badge {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 3px 9px;
-      border-radius: 999px;
-      background: rgba(15, 118, 110, 0.16);
-      border: 1px solid rgba(45, 212, 191, 0.5);
-      color: #a7f3d0;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    h1 .badge-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: #22c55e;
-      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.35);
-    }
-
-    .subtitle {
-      font-size: 13px;
-      color: var(--text-soft);
-      margin-bottom: 18px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .subtitle span.highlight {
-      color: var(--accent-strong);
-      font-weight: 500;
-    }
-
-    .subtitle .pill-count {
-      font-size: 11px;
-      border-radius: 999px;
-      padding: 3px 8px;
-      background: rgba(15, 23, 42, 0.65);
-      border: 1px solid rgba(148, 163, 184, 0.38);
-      color: #cbd5f5;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    body[data-theme="light"] .subtitle .pill-count {
-      background: #eef2ff;
-      color: #1e293b;
-      border-color: #c7d2fe;
-    }
-
-    .subtitle .pill-count-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: rgba(56, 189, 248, 0.9);
-    }
-
-    .korean-mark {
-      font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont,
-        "Segoe UI", sans-serif;
-      letter-spacing: -0.03em;
-    }
-
-    .main-panel {
-      background: rgba(15, 23, 42, 0.88);
-      backdrop-filter: blur(24px);
-      border-radius: var(--radius-xl);
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      padding: 18px 18px 14px 18px;
-      box-shadow: 0 16px 50px rgba(15, 23, 42, 0.68);
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    body[data-theme="light"] .main-panel {
-      background: rgba(248, 250, 252, 0.96);
-      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
-    }
-
-    .controls-row {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-bottom: 4px;
-    }
-
-    .controls-top {
-      display: flex;
-      gap: 10px;
-      align-items: stretch;
-    }
-
-    .search-group {
-      flex: 1.7;
-      position: relative;
-      display: flex;
-      align-items: center;
-    }
-
-    .search-group input {
-      width: 100%;
-      padding: 11px 12px 11px 32px;
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(148, 163, 184, 0.55);
-      background: rgba(15, 23, 42, 0.96);
-      color: var(--text);
-      font-size: 13px;
-      outline: none;
-      transition: border-color var(--transition-normal), box-shadow var(--transition-normal),
-        background var(--transition-normal), transform var(--transition-fast);
-      box-shadow: 0 0 0 1px transparent;
-    }
-
-    body[data-theme="light"] .search-group input {
-      background: #f9fafb;
-      border-color: #d1d5db;
-    }
-
-    .search-group input::placeholder {
-      color: #64748b;
-    }
-
-    .search-icon {
-      position: absolute;
-      left: 10px;
-      width: 16px;
-      height: 16px;
-      opacity: 0.65;
-    }
-
-    .filters-group {
-      flex: 1.3;
-      display: flex;
-      gap: 8px;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .controls,
-    .right-top-controls {
-      display: flex;
-      gap: 8px;
-      align-items: center;
-      font-size: 12px;
-    }
-
-    .controls label {
-      font-size: 11px;
-      color: var(--text-soft);
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      white-space: nowrap;
-    }
-
-    .tag-dot-k,
-    .tag-dot-j,
-    .tag-dot-p,
-    .tag-dot-a,
-    .tag-dot-pay,
-    .tag-dot-etc {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-    }
-
-    .tag-dot-k {
-      background: var(--tag-kpop);
-    }
-
-    .tag-dot-j {
-      background: var(--tag-jpop);
-    }
-
-    .tag-dot-p {
-      background: var(--tag-pop);
-    }
-
-    .tag-dot-a {
-      background: var(--tag-ani);
-    }
-
-    .tag-dot-pay {
-      background: var(--tag-pay);
-    }
-
-    .tag-dot-etc {
-      background: var(--tag-etc);
+    .controls input {
+      flex: 0 0 68%;
+      font-size: 0.9rem;
     }
 
     .controls select {
-      border-radius: var(--radius-lg);
-      padding: 8px 26px 8px 10px;
-      border: 1px solid rgba(148, 163, 184, 0.65);
-      background:
-        linear-gradient(to bottom, rgba(15, 23, 42, 0.98), rgba(17, 24, 39, 0.98));
-      color: var(--text);
-      font-size: 12px;
-      outline: none;
-      cursor: pointer;
-      appearance: none;
-      position: relative;
-      min-width: 110px;
-      background-image: linear-gradient(45deg, transparent 50%, #94a3b8 50%), linear-gradient(135deg, #94a3b8 50%, transparent 50%);
-      background-position: calc(100% - 11px) 11px, calc(100% - 7px) 11px;
-      background-size: 6px 6px, 6px 6px;
-      background-repeat: no-repeat;
+      flex: 0 0 30%;
+      font-size: 0.9rem;
     }
 
-    body[data-theme="light"] .controls select {
-      background: #f9fafb;
-      background-image: linear-gradient(45deg, transparent 50%, #6b7280 50%), linear-gradient(135deg, #6b7280 50%, transparent 50%);
-    }
-
-    .controls select:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.4);
-    }
-
-    .right-top-controls {
-      margin-left: auto;
-      gap: 6px;
-    }
-
-    .theme-toggle {
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.7);
-      background: radial-gradient(circle at top left, rgba(37, 99, 235, 0.12), rgba(15, 23, 42, 0.96));
-      color: var(--text-soft);
-      font-size: 11px;
-      padding: 6px 10px;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      cursor: pointer;
-      transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast),
-        border-color var(--transition-fast), color var(--transition-fast);
-      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.75);
-    }
-
-    body[data-theme="light"] .theme-toggle {
-      background: #eef2ff;
-      border-color: #c7d2fe;
-      color: #4338ca;
-      box-shadow: 0 10px 25px rgba(148, 163, 184, 0.4);
-    }
-
-    .theme-toggle:hover {
-      transform: translateY(-1px);
-      border-color: rgba(56, 189, 248, 0.9);
-      box-shadow: 0 16px 40px rgba(8, 47, 73, 0.9);
-      color: var(--accent-strong);
-    }
-
-    .tag-legend {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 11px;
-      color: var(--text-soft);
-      flex-wrap: wrap;
-    }
-
-    .tag-legend-item {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      padding: 2px 8px;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.7);
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      white-space: nowrap;
-    }
-
-    body[data-theme="light"] .tag-legend-item {
-      background: #eef2ff;
-      border-color: #c7d2fe;
-      color: #4b5563;
-    }
-
-    .tag-legend-item span.dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-    }
-
-    .dot-k {
-      background: var(--tag-kpop);
-    }
-
-    .dot-j {
-      background: var(--tag-jpop);
-    }
-
-    .dot-p {
-      background: var(--tag-pop);
-    }
-
-    .dot-a {
-      background: var(--tag-ani);
-    }
-
-    .dot-pay {
-      background: var(--tag-pay);
-    }
-
-    .dot-etc {
-      background: var(--tag-etc);
-    }
-
-    .table-wrapper {
-      flex: 1;
-      border-radius: var(--radius-card);
-      border: 1px solid rgba(148, 163, 184, 0.45);
-      background:
-        linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.96));
-      overflow: hidden;
-      box-shadow: 0 14px 40px rgba(15, 23, 42, 0.85);
-      display: flex;
-      flex-direction: column;
-      min-height: 260px;
-      max-height: 440px;
-    }
-
-    body[data-theme="light"] .table-wrapper {
-      background: #f9fafb;
-      box-shadow: 0 14px 40px rgba(15, 23, 42, 0.12);
-    }
-
-    .table-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 9px 13px 8px;
-      background: linear-gradient(to right, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 0.96));
-      border-bottom: 1px solid rgba(148, 163, 184, 0.5);
-    }
-
-    body[data-theme="light"] .table-header {
-      background: linear-gradient(to right, #e5e7eb, #e5e7eb);
-    }
-
-    .table-header-left {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      font-size: 12px;
-      color: var(--text-soft);
-    }
-
-    .table-header-left strong {
-      color: var(--text);
-      font-weight: 600;
-    }
-
-    .table-header-pill {
-      font-size: 11px;
-      border-radius: 999px;
-      padding: 3px 8px;
-      background: rgba(15, 118, 110, 0.12);
-      border: 1px solid rgba(45, 212, 191, 0.65);
-      color: #a7f3d0;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    body[data-theme="light"] .table-header-pill {
-      background: #ecfdf5;
-      color: #047857;
-      border-color: #6ee7b7;
-    }
-
-    .table-header-pill-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: #22c55e;
-    }
-
-    .table-header-right {
-      font-size: 11px;
-      color: var(--text-soft);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .table-scroll {
-      flex: 1;
-      overflow: auto;
-      position: relative;
+    .controls button {
+      flex: 0 0 100%;
+      font-size: 0.9rem;
     }
 
     table {
       width: 100%;
-      border-collapse: collapse;
-      font-size: 12px;
+      font-size: 0.85rem;
     }
 
-    th,
-    td {
-      padding: 7px 10px;
-      text-align: left;
-    }
-
-    thead tr {
-      background: rgba(15, 23, 42, 0.98);
-      position: sticky;
-      top: 0;
-      z-index: 2;
-    }
-
-    body[data-theme="light"] thead tr {
-      background: #e5e7eb;
-    }
-
-    th {
-      font-weight: 600;
-      font-size: 11px;
-      color: var(--text-soft);
-      border-bottom: 1px solid rgba(148, 163, 184, 0.55);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-
-    tbody tr:nth-child(even) {
-      background: rgba(15, 23, 42, 0.66);
-    }
-
-    body[data-theme="light"] tbody tr:nth-child(even) {
-      background: #f3f4f6;
-    }
-
-    tbody tr:nth-child(odd) {
-      background: rgba(15, 23, 42, 0.88);
-    }
-
-    body[data-theme="light"] tbody tr:nth-child(odd) {
-      background: #f9fafb;
-    }
-
-    tbody tr:hover {
-      background: rgba(15, 23, 42, 0.9);
-    }
-
-    body[data-theme="light"] tbody tr:hover {
-      background: #e5e7eb;
-    }
-
-    td {
-      border-bottom: 1px solid rgba(30, 64, 175, 0.3);
-      color: var(--text);
-    }
-
-    td:nth-child(1) {
-      width: 40px;
-      color: var(--text-soft);
-      font-variant-numeric: tabular-nums;
-      text-align: right;
-    }
-
-    td:nth-child(2) {
-      width: 220px;
-    }
-
-    td:nth-child(3) {
-      width: 260px;
-      font-weight: 500;
-    }
-
-    td:nth-child(4) {
-      width: 140px;
-    }
-
+    /* 1번(#), 4번(장르), 5번(비고) 컬럼 숨기기 */
+    th:nth-child(1),
+    td:nth-child(1),
+    th:nth-child(4),
+    td:nth-child(4),
+    th:nth-child(5),
     td:nth-child(5) {
-      width: 140px;
-      color: var(--text-soft);
-      font-size: 11px;
-    }
-
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      padding: 2px 8px;
-      border-radius: 999px;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: -0.01em;
-      border: 1px solid transparent;
-      white-space: nowrap;
-    }
-
-    .tag-kpop {
-      background: rgba(34, 197, 94, 0.18);
-      border-color: rgba(22, 163, 74, 0.65);
-      color: #bbf7d0;
-    }
-
-    .tag-jpop {
-      background: rgba(139, 92, 246, 0.18);
-      border-color: rgba(147, 51, 234, 0.7);
-      color: #ddd6fe;
-    }
-
-    .tag-pop {
-      background: rgba(249, 115, 22, 0.2);
-      border-color: rgba(234, 88, 12, 0.7);
-      color: #fed7aa;
-    }
-
-    .tag-ani {
-      background: rgba(234, 179, 8, 0.16);
-      border-color: rgba(202, 138, 4, 0.75);
-      color: #fef08a;
-    }
-
-    .tag-pay {
-      background: rgba(236, 72, 153, 0.22);
-      border-color: rgba(219, 39, 119, 0.75);
-      color: #fbcfe8;
-    }
-
-    .tag-etc {
-      background: rgba(107, 114, 128, 0.3);
-      border-color: rgba(75, 85, 99, 0.8);
-      color: #e5e7eb;
-    }
-
-    body[data-theme="light"] .tag-kpop {
-      background: #dcfce7;
-      border-color: #22c55e;
-      color: #166534;
-    }
-
-    body[data-theme="light"] .tag-jpop {
-      background: #ede9fe;
-      border-color: #8b5cf6;
-      color: #4c1d95;
-    }
-
-    body[data-theme="light"] .tag-pop {
-      background: #ffedd5;
-      border-color: #f97316;
-      color: #7c2d12;
-    }
-
-    body[data-theme="light"] .tag-ani {
-      background: #fef9c3;
-      border-color: #eab308;
-      color: #854d0e;
-    }
-
-    body[data-theme="light"] .tag-pay {
-      background: #fce7f3;
-      border-color: #ec4899;
-      color: #831843;
-    }
-
-    body[data-theme="light"] .tag-etc {
-      background: #e5e7eb;
-      border-color: #6b7280;
-      color: #111827;
-    }
-
-    .empty-state {
-      padding: 28px 20px 26px;
-      text-align: center;
-      color: var(--text-soft);
-      font-size: 13px;
-    }
-
-    .empty-state-title {
-      font-size: 16px;
-      font-weight: 600;
-      margin-bottom: 6px;
-      color: var(--text);
-    }
-
-    .empty-state-emoji {
-      font-size: 28px;
-      margin-bottom: 8px;
-    }
-
-    .empty-state-desc {
-      font-size: 12px;
-      color: var(--text-soft);
-    }
-
-    .hidden {
       display: none;
     }
 
-    .side-panel {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
+    th:nth-child(2),
+    td:nth-child(2),
+    th:nth-child(3),
+    td:nth-child(3) {
+      white-space: normal;
     }
+  }
+</style>
 
-    .side-card {
-      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.12), rgba(15, 23, 42, 0.96));
-      border-radius: var(--radius-xl);
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      padding: 14px 16px 14px;
-      box-shadow: 0 14px 36px rgba(8, 47, 73, 0.95);
-      position: relative;
-      overflow: hidden;
-    }
-
-    body[data-theme="light"] .side-card {
-      background: radial-gradient(circle at top left, rgba(129, 140, 248, 0.12), #ffffff);
-      box-shadow: 0 16px 40px rgba(148, 163, 184, 0.55);
-    }
-
-    .side-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at bottom right, rgba(56, 189, 248, 0.18), transparent 60%);
-      opacity: 1;
-      pointer-events: none;
-    }
-
-    .side-card-inner {
-      position: relative;
-      z-index: 1;
-    }
-
-    .side-card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 10px;
-    }
-
-    .side-card-title {
-      font-size: 14px;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .side-card-subtitle {
-      font-size: 12px;
-      color: var(--text-soft);
-    }
-
-    .side-card-badge {
-      font-size: 10px;
-      border-radius: 999px;
-      padding: 3px 7px;
-      background: rgba(15, 23, 42, 0.7);
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      color: #e5e7eb;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    body[data-theme="light"] .side-card-badge {
-      background: #eef2ff;
-      border-color: #c7d2fe;
-      color: #4b5563;
-    }
-
-    .side-card-badge-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: #22c55e;
-    }
-
-    .random-main {
-      margin: 8px 0 10px;
-      border-radius: 14px;
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px dashed rgba(56, 189, 248, 0.6);
-      padding: 9px 10px;
-      min-height: 64px;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    body[data-theme="light"] .random-main {
-      background: #f9fafb;
-    }
-
-    .random-main::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at top left, rgba(59, 130, 246, 0.4), transparent 55%);
-      opacity: 0.22;
-      pointer-events: none;
-    }
-
-    .random-main-inner {
-      position: relative;
-      z-index: 1;
-    }
-
-    .random-label {
-      font-size: 11px;
-      color: var(--text-soft);
-      margin-bottom: 1px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .random-label-pill {
-      font-size: 10px;
-      border-radius: 999px;
-      padding: 2px 6px;
-      background: rgba(15, 23, 42, 0.85);
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      color: #cbd5f5;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    body[data-theme="light"] .random-label-pill {
-      background: #eef2ff;
-      color: #1f2937;
-      border-color: #c7d2fe;
-    }
-
-    .random-text {
-      font-size: 15px;
-      font-weight: 600;
-      letter-spacing: -0.03em;
-      color: #e5e7eb;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      min-height: 24px;
-    }
-
-    body[data-theme="light"] .random-text {
-      color: #111827;
-    }
-
-    .random-artist {
-      font-weight: 500;
-      color: #a5b4fc;
-    }
-
-    .random-title {
-      color: #fef9c3;
-    }
-
-    .random-hint {
-      font-size: 11px;
-      color: var(--text-soft);
-      margin-top: 4px;
-    }
-
-    .random-button {
-      margin-top: 8px;
-    }
-
-    .random-btn {
-      width: 100%;
-      border-radius: 999px;
-      padding: 9px 12px;
-      font-size: 13px;
-      font-weight: 500;
-      border: none;
-      cursor: pointer;
-      background: linear-gradient(135deg, #38bdf8, #0f766e);
-      color: white;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      box-shadow: 0 10px 30px rgba(8, 47, 73, 0.85);
-      transition: transform var(--transition-fast), box-shadow var(--transition-fast), filter var(--transition-fast);
-    }
-
-    .random-btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 16px 40px rgba(8, 47, 73, 0.9);
-      filter: brightness(1.03);
-    }
-
-    .random-btn:active {
-      transform: translateY(0);
-      box-shadow: 0 8px 18px rgba(8, 47, 73, 0.9);
-      filter: brightness(0.98);
-    }
-
-    .random-note {
-      font-size: 10px;
-      color: var(--text-soft);
-      margin-top: 6px;
-    }
-
-    .info-card {
-      margin-top: 4px;
-      padding: 10px 11px 9px;
-      border-radius: 16px;
-      background: rgba(15, 23, 42, 0.86);
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      font-size: 11px;
-      color: var(--text-soft);
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-    }
-
-    body[data-theme="light"] .info-card {
-      background: #f3f4f6;
-      border-color: #d1d5db;
-    }
-
-    .info-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 4px;
-    }
-
-    .info-label {
-      color: var(--text-soft);
-    }
-
-    .info-value {
-      color: var(--text);
-      font-weight: 500;
-    }
-
-    .info-bullet {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      margin-top: 4px;
-    }
-
-    .info-bullet-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: rgba(56, 189, 248, 0.8);
-    }
-
-    .info-bullet-text {
-      font-size: 11px;
-      color: var(--text-soft);
-    }
-
-    .footer-note {
-      margin-top: 4px;
-      font-size: 10px;
-      color: #64748b;
-      text-align: right;
-    }
-
-    body[data-theme="light"] .footer-note {
-      color: #9ca3af;
-    }
-
-    @media (max-width: 960px) {
-      body {
-        padding: 18px 10px;
-      }
-
-      .app {
-        padding: 16px 12px 14px;
-        border-radius: 22px;
-        grid-template-columns: minmax(0, 1fr);
-        gap: 16px;
-      }
-
-      .main-panel {
-        padding: 14px 12px 12px;
-      }
-
-      .side-card {
-        margin-top: 2px;
-      }
-
-      h1 {
-        font-size: 22px;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .controls-top {
-        flex-direction: column;
-        gap: 8px;
-      }
-
-      .search-group input {
-        font-size: 13px;
-      }
-
-      .filters-group {
-        flex-wrap: wrap;
-        align-items: flex-start;
-      }
-
-      .tag-legend {
-        margin-top: 3px;
-      }
-
-      .table-wrapper {
-        max-height: 380px;
-      }
-
-      .side-card {
-        padding: 12px 11px 11px;
-      }
-    }
-  </style>
 </head>
 <body>
   <div class="app">
-    <div class="app-inner">
-      <section class="main-panel">
-        <header>
-          <h1>
-            노래 검색 & 랜덤 추천
-            <span class="badge">
-              <span class="badge-dot"></span>
-              Auto Filter
-            </span>
-          </h1>
-          <div class="subtitle">
-            <span class="korean-mark">검색으로 빠르게 찾고, 랜덤 추천으로 가볍게 골라보세요.</span>
-            <span class="pill-count">
-              <span class="pill-count-dot"></span>
-              <span id="songCount">총 0곡 / 현재 0곡</span>
-            </span>
-          </div>
-        </header>
-
-        <div class="controls-row">
-          <div class="controls-top">
-            <div class="search-group">
-              <svg class="search-icon" viewBox="0 0 24 24">
-                <path
-                  fill="currentColor"
-                  d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79L19 20.5 20.5 19 15.5 14zm-6 0C8.01 14 6 11.99 6 9.5S8.01 5 10.5 5 15 7.01 15 9.5 12.99 14 10.5 14z">
-                </path>
-              </svg>
-              <input id="searchInput" type="text" placeholder="가수 또는 곡 제목으로 검색해 보세요" />
-            </div>
-
-            <div class="filters-group">
-              <div class="controls">
-                <label for="genreFilter">
-                  <span>장르</span>
-                </label>
-                <select id="genreFilter">
-                  <option value="all">전체</option>
-                  <option value="kpop">한국</option>
-                  <option value="jpop">일본</option>
-                  <option value="pop">미국</option>
-                  <option value="ani">만화</option>
-                  <option value="pay">유료</option>
-                  <option value="etc">기타</option>
-                </select>
-              </div>
-
-              <div class="right-top-controls">
-                <button id="themeToggle" class="theme-toggle" type="button">
-                  🌙 다크 모드
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="tag-legend">
-            <span>태그 안내:</span>
-            <span class="tag-legend-item">
-              <span class="dot dot-k"></span> 한국
-            </span>
-            <span class="tag-legend-item">
-              <span class="dot dot-j"></span> 일본
-            </span>
-            <span class="tag-legend-item">
-              <span class="dot dot-p"></span> 미국
-            </span>
-            <span class="tag-legend-item">
-              <span class="dot dot-a"></span> 만화
-            </span>
-            <span class="tag-legend-item">
-              <span class="dot dot-pay"></span> 유료
-            </span>
-            <span class="tag-legend-item">
-              <span class="dot dot-etc"></span> 기타
-            </span>
-          </div>
+    <header>
+      <div class="header-top">
+        <div class="header-titles">
+          <h1>으비이 라이브 리스트🎤</h1>
+          <h1>2025.11.29(654화) Ver.</h1>
+          <p id="songCount"></p>
         </div>
+        <button
+          id="themeToggle"
+          class="theme-toggle"
+          type="button"
+        >
+          🌙 다크 모드
+        </button>
+      </div>
+    </header>
 
-        <div class="table-wrapper">
-          <div class="table-header">
-            <div class="table-header-left">
-              <strong>노래 목록</strong>
-              <span class="table-header-pill">
-                <span class="table-header-pill-dot"></span>
-                실시간 필터 적용
-              </span>
-            </div>
-            <div class="table-header-right">
-              검색어 + 장르 기준으로 자동 필터링됩니다
-            </div>
-          </div>
-          <div class="table-scroll">
-            <table>
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>가수</th>
-                  <th>곡명</th>
-                  <th>장르</th>
-                  <th>비고</th>
-                </tr>
-              </thead>
-              <tbody id="songTbody">
-              </tbody>
-            </table>
-            <div id="emptyState" class="empty-state hidden">
-              <div class="empty-state-emoji">🔍</div>
-              <div class="empty-state-title">조건에 맞는 노래를 찾지 못했어요</div>
-              <div class="empty-state-desc">
-                검색어를 조금 줄이거나, 장르 필터를 <strong>전체</strong>로 설정해 보세요.
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <section class="side-panel">
-        <div class="side-card">
-          <div class="side-card-inner">
-            <div class="side-card-header">
-              <div>
-                <div class="side-card-title">
-                  랜덤 추천
-                  <span style="font-size: 12px;">🎲</span>
-                </div>
-                <div class="side-card-subtitle">
-                  현재 검색/장르 조건에 맞는 노래 중에서 하나를 골라드려요.
-                </div>
-              </div>
-              <span class="side-card-badge">
-                <span class="side-card-badge-dot"></span>
-                Smart Shuffle
-              </span>
-            </div>
+    <section class="controls">
+      <input
+        id="searchInput"
+        type="text"
+        placeholder="가수 또는 제목 검색"
+      />
 
-            <div class="random-main">
-              <div class="random-main-inner">
-                <div class="random-label">
-                  <span>오늘은 어떤 곡을 들어볼까요?</span>
-                  <span class="random-label-pill">필터 반영</span>
-                </div>
-                <div id="randomBox" class="random-text hidden">
-                  <span id="randomText"></span>
-                </div>
-                <p class="random-hint">
-                  검색어와 장르 필터를 조합해서, 원하는 분위기의 노래만 랜덤으로 뽑을 수 있어요.
-                </p>
-                <div class="random-button">
-                  <button id="randomBtn" class="random-btn" type="button">
-                    <span>랜덤 추천 받기</span>
-                    <span style="font-size: 14px;">✨</span>
-                  </button>
-                </div>
-                <p class="random-note">
-                  * 현재 필터에 맞는 노래가 없으면 안내 메시지가 표시돼요.
-                </p>
-              </div>
-            </div>
+      <select id="genreFilter">
+        <option value="all">전체</option>
+        <option value="kpop">한국</option>
+        <option value="jpop">일본</option>
+        <option value="pop">미국</option>
+        <option value="ani">만화</option>
+        <option value="pay">유료</option>
+        <option value="etc">기타</option>
+      </select>
+      <button id="randomBtn">랜덤 노래 🎲</button>
+    </section>
 
-            <div class="info-card">
-              <div class="info-row">
-                <div class="info-label">검색 팁</div>
-                <div class="info-value">가수 + 곡명 섞어서 검색 가능</div>
-              </div>
-              <div class="info-row">
-                <div class="info-label">예시</div>
-                <div class="info-value">"아이유", "Love", "ost" 등</div>
-              </div>
-              <div class="info-bullet">
-                <span class="info-bullet-dot"></span>
-                <span class="info-bullet-text">
-                  검색어를 비워두고 장르만 선택하면, 해당 장르 전체에서 랜덤 추천을 받을 수 있어요.
-                </span>
-              </div>
-              <div class="footer-note">
-                테마는 오른쪽 상단 버튼으로 라이트/다크 전환이 가능합니다.
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+    <section id="randomBox" class="random-result hidden">
+      <div class="random-title">오늘의 랜덤 추천</div>
+      <div class="random-main" id="randomText"></div>
+    </section>
 
-    </div>
+    <section class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>가수</th>
+            <th>제목</th>
+            <th>장르</th>
+            <th>비고</th>
+          </tr>
+        </thead>
+        <tbody id="songTbody">
+        </tbody>
+      </table>
+      <div id="emptyState" class="empty-state hidden">
+        조건에 맞는 노래가 없습니다 🥲
+      </div>
+    </section>
   </div>
 
-  <!-- 1) 노래 목록 파일 먼저 불러오기 -->
+  // ✅ 노래 리스트 불러오기
   <script src="songs.js"></script>
-
-  <!-- 2) 노래 목록을 사용하는 로직 -->
+  
   <script>
+    
   const tbody = document.getElementById("songTbody");
   const searchInput = document.getElementById("searchInput");
   const genreFilter = document.getElementById("genreFilter");
@@ -1267,6 +509,8 @@
 
   function updateSongCount(filteredCount) {
     const totalCount = songs.length; // 전체 곡 수
+
+    // 총 전체 곡 수 / 필터링된 곡 수
     songCountEl.textContent = `총 ${totalCount.toLocaleString()}곡 / 현재 ${filteredCount.toLocaleString()}곡`;
   }
 
@@ -1371,29 +615,7 @@
   // 최초 렌더
   renderTable(songs);
   updateSongCount(songs.length);
-  </script>
+
+</script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
