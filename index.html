@@ -230,13 +230,6 @@
   .tag-pay  { background: #e4f7d2; color: #558b2f; }
   .tag-etc  { background: #ede7f6; color: #5e35b1; }
 
-  /* 🔍 검색어 하이라이트 */
-  .highlight {
-    background: rgba(56, 189, 248, 0.3); /* 파란 계열 반투명 배경 */
-    border-radius: 4px;
-    padding: 1px 2px;
-  }
-
   /* 🎲 랜덤 추천 애니메이션 */
   @keyframes popFade {
     0% {
@@ -544,27 +537,8 @@
     // 총 전체 곡 수 / 필터링된 곡 수
     songCountEl.textContent = `총 ${totalCount.toLocaleString()}곡 / 현재 ${filteredCount.toLocaleString()}곡`;
   }
-    
-  // 🔍 검색어를 포함하는 부분 하이라이트
-  function highlightKeyword(text, keyword) {
-    if (!keyword) return text;
-      
-    const source = text || "";
-    const lowerSource = source.toLowerCase();
-    const lowerKeyword = keyword.toLowerCase();
 
-    const index = lowerSource.indexOf(lowerKeyword);
-      
-    if (index === -1) return text;
-
-    const before = source.slice(0, index);
-    const match = source.slice(index, index + keyword.length);
-    const after = source.slice(index + keyword.length);
-      
-    return `${before}<span class="highlight">${match}</span>${after}`;
-  }
-
-  function renderTable(list, keyword = "") {
+  function renderTable(list) {
     tbody.innerHTML = "";
 
     if (!list.length) {
@@ -580,10 +554,6 @@
       const genreTags = (song.genre || [])
         .map((g) => `<span class="${genreTagClass(g)}">${genreLabel(g)}</span>`)
         .join(" ");
-      
-      // 🔍 여기서 검색어 하이라이트 적용
-      const artistHTML = highlightKeyword(song.artist || "", keyword);
-      const titleHTML = highlightKeyword(song.title || "", keyword);
       
       tr.innerHTML = `
         <td>${index + 1}</td>
@@ -615,9 +585,8 @@
   }
 
   function updateTable() {
-    const keyword = searchInput.value.trim();   // 🔍 현재 입력된 검색어
     const filtered = getFilteredSongs();
-    renderTable(filtered);                      // ⬅︎ 검색어 같이 전달
+    renderTable(filtered);
     updateSongCount(filtered.length);
 
     // 필터/검색 결과가 바뀔 때마다 랜덤 박스 초기화
@@ -677,6 +646,7 @@
 </script>
 </body>
 </html>
+
 
 
 
