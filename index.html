@@ -230,6 +230,25 @@
   .tag-pay  { background: #e4f7d2; color: #558b2f; }
   .tag-etc  { background: #ede7f6; color: #5e35b1; }
 
+  /* 🎲 랜덤 추천 애니메이션 */
+  @keyframes popFade {
+    0% {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    60% {
+      transform: scale(1.05);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .random-text.show {
+    animation: popFade 0.28s ease-out;
+  }
+
   /* ===== 다크 모드 ===== */
   body[data-theme="dark"] {
     background: #111827;
@@ -627,6 +646,7 @@
 </script>
 </body>
 </html>
+
 
 
 
