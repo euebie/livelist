@@ -615,8 +615,9 @@
   }
 
   function updateTable() {
+    const keyword = searchInput.value.trim();   // 🔍 현재 입력된 검색어
     const filtered = getFilteredSongs();
-    renderTable(filtered);
+    renderTable(filtered);                      // ⬅︎ 검색어 같이 전달
     updateSongCount(filtered.length);
 
     // 필터/검색 결과가 바뀔 때마다 랜덤 박스 초기화
@@ -676,6 +677,7 @@
 </script>
 </body>
 </html>
+
 
 
 
