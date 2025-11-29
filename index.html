@@ -580,7 +580,11 @@
       const genreTags = (song.genre || [])
         .map((g) => `<span class="${genreTagClass(g)}">${genreLabel(g)}</span>`)
         .join(" ");
-
+      
+      // 🔍 여기서 검색어 하이라이트 적용
+      const artistHTML = highlightKeyword(song.artist || "", keyword);
+      const titleHTML = highlightKeyword(song.title || "", keyword);
+      
       tr.innerHTML = `
         <td>${index + 1}</td>
         <td>${song.artist}</td>
@@ -672,6 +676,7 @@
 </script>
 </body>
 </html>
+
 
 
 
