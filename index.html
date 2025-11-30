@@ -574,23 +574,30 @@
       .replace(/\s+/g, ""); // 모든 공백 제거
   }
 
-  function getFilteredSongs() {
-    const keyword = searchInput.value.trim().toLowerCase();
-    const filterGenre = genreFilter.value;
+function getFilteredSongs() {
+  const keyword = normalize(searchInput.value); // 입력값 공백 제거 + 소문자
+  const filterGenre = genreFilter.value;
 
-    return songs.filter((song) => {
-      const title = (song.title || "").toLowerCase();
-      const artist = (song.artist || "").toLowerCase();
+  return songs.filter((song) => {
+    // 곡 정보도 공백 제거 + 소문자
+    const title = normalize(song.title);
+    const artist = normalize(song.artist);
 
-      const matchKeyword =
-        !keyword || title.includes(keyword) || artist.includes(keyword);
+    // 아티스트 + 제목을 합쳐서도 검색되게
+    const combined = normalize(`${song.artist || ""} ${song.title || ""}`);
 
-      const matchGenre =
-        filterGenre === "all" || (song.genre || []).includes(filterGenre);
+    const matchKeyword =
+      !keyword ||
+      title.includes(keyword) ||
+      artist.includes(keyword) ||
+      combined.includes(keyword);
 
-      return matchKeyword && matchGenre;
-    });
-  }
+    const matchGenre =
+      filterGenre === "all" || (song.genre || []).includes(filterGenre);
+
+    return matchKeyword && matchGenre;
+  });
+}
 
   function updateTable() {
     const filtered = getFilteredSongs();
