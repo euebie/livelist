@@ -568,6 +568,12 @@
     });
   }
 
+  function normalize(str) {
+    return (str || "")
+      .toLowerCase()
+      .replace(/\s+/g, ""); // 모든 공백 제거
+  }
+
   function getFilteredSongs() {
     const keyword = searchInput.value.trim().toLowerCase();
     const filterGenre = genreFilter.value;
