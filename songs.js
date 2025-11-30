@@ -730,6 +730,7 @@ const songs = [
       { artist: "서영은", title: "내 안의 그대", genre: ["kpop"], note: "" },
       { artist: "서영은", title: "비오는 거리", genre: ["kpop"], note: "" },
       { artist: "서영은", title: "아름다운 구속", genre: ["kpop"], note: "원곡:김종서" },
+      { artist: "서영은", title: "완소그대", genre: ["kpop"], note: "" },
       { artist: "서영은", title: "웃는거야", genre: ["kpop"], note: "" },
       { artist: "서영은", title: "혼자가 아닌 나", genre: ["kpop"], note: "" },
       { artist: "서온(Seoown)", title: "여름이 될게", genre: ["kpop"], note: "" },
@@ -2227,6 +2228,7 @@ const songs = [
 
       // ✅ E
       { artist: "Eagles", title: "Hotel Califonia", genre: ["pop"], note: "" },
+      { artist: "Ed Sheeran", title: "Camera", genre: ["pop"], note: "" },
       { artist: "Ed Sheeran", title: "Drive", genre: ["pop"], note: "" },
       { artist: "Ed Sheeran", title: "Perfect", genre: ["pop"], note: "" },
       { artist: "Ed Sheeran", title: "Photograph", genre: ["pop"], note: "" },
