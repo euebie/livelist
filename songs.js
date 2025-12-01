@@ -1460,7 +1460,6 @@ const songs = [
       { artist: "이무진", title: "청혼하지 않을 이유를 못 찾았어", genre: ["kpop"], note: "" },
       { artist: "이문세", title: "가로수 그늘 아래 서면", genre: ["kpop"], note: "" },
       { artist: "이문세", title: "깊은 밤을 날아서", genre: ["kpop"], note: "" },
-      { artist: "이문세", title: "사랑은 늘 도망가", genre: ["kpop"], note: "" },
       { artist: "이문세", title: "소녀", genre: ["kpop"], note: "" },
       { artist: "이문세", title: "옛사랑", genre: ["kpop"], note: "" },
       { artist: "이문세", title: "휘파람", genre: ["kpop"], note: "" },
