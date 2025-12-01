@@ -1283,7 +1283,7 @@ const songs = [
       { artist: "오왠(O.WHEN)", title: "사랑이란 단어로는 설명이 어렵죠", genre: ["kpop"], note: "" },
       { artist: "오왠(O.WHEN)", title: "오늘", genre: ["kpop"], note: "" },
       { artist: "오열(OYEOL), 레마", title: "작은 마음", genre: ["kpop"], note: "" },
-      { artist: "오오츠카 아이", title: "사쿠란보", genre: ["jpop","pay"], note: "유료:300개" },
+      { artist: "오오츠카 아이(Otsuka Ai)", title: "사쿠란보", genre: ["jpop","pay"], note: "유료:300개" },
       { artist: "오유", title: "살구송", genre: ["kpop","pay"], note: "유료:500개" },
       { artist: "오지은", title: "서울살이는", genre: ["kpop"], note: "" },
       { artist: "오쿠 하나코(Oku Hanako)", title: "변하지 않는 것(Kawaranai Mono)", genre: ["jpop"], note: "" },
