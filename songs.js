@@ -1286,7 +1286,7 @@ const songs = [
       { artist: "오오츠카 아이(Otsuka Ai)", title: "사쿠란보", genre: ["jpop","pay"], note: "유료:300개" },
       { artist: "오유", title: "살구송", genre: ["kpop","pay"], note: "유료:500개" },
       { artist: "오지은", title: "서울살이는", genre: ["kpop"], note: "" },
-      { artist: "오쿠 하나코(Oku Hanako)", title: "변하지 않는 것(Kawaranai Mono)", genre: ["jpop"], note: "" },
+      { artist: "오쿠 하나코(Oku Hanako)", title: "변하지 않는 것(Kawaranai Mono)", genre: ["jpop","ani"], note: "시간을 달리는 소녀 OST" },
       { artist: "오태호", title: "10년 후의 약속", genre: ["kpop"], note: "" },
       { artist: "오태호", title: "기억속의 멜로디", genre: ["kpop"], note: "" },
       { artist: "오피셜히게단디즘(Official Hige Dandism)", title: "숙명", genre: ["jpop"], note: "" },
