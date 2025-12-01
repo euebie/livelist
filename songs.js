@@ -295,7 +295,7 @@ const songs = [
       { artist: "다비치(Davichi)", title: "팡파레", genre: ["kpop"], note: "" },
       { artist: "다비치(Davichi)", title: "My Man", genre: ["kpop"], note: "" },
       { artist: "다섯손가락", title: "새벽 기차", genre: ["kpop"], note: "" },
-      { artist: "다이(DAI), 유즈키(Yuzuki)", title: "YOU", genre: ["jpop"], note: "" },
+      { artist: "다이(DAI), 유즈키(Yuzuki)", title: "YOU", genre: ["jpop","ani"], note: "쓰르라미 울 적에 OST" },
       { artist: "다즈비(DAZBEE)", title: "깜빡임", genre: ["jpop"], note: "원곡:back number" },
       { artist: "다즈비(DAZBEE)", title: "시간을 넘어와줘", genre: ["kpop"], note: "" },
       { artist: "다즈비(DAZBEE)", title: "타바코(たばこ)", genre: ["jpop"], note: "원곡:코레사와(Koresawa)" },
