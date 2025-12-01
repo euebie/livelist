@@ -401,7 +401,7 @@ const songs = [
       { artist: "로꼬(Loco)", title: "우연히 봄(Feat. 유주(여자친구))", genre: ["kpop"], note: "" },
       { artist: "로시", title: "이 별", genre: ["kpop"], note: "원곡:길구봉구" },
       { artist: "로시", title: "Stars", genre: ["kpop"], note: "" },
-      { artist: "로엘(Roel)", title: "담배(한국어 Ver.)", genre: ["kpop"], note: "원곡:코레사와(Koresawa)" },
+      { artist: "로엘(Roel)", title: "담배(한국어 Ver.)", genre: ["kpop","jpop"], note: "원곡:코레사와(Koresawa)" },
       { artist: "로이킴(Roy Kim)", title: "내게 사랑이 뭐냐고 물어본다면", genre: ["kpop"], note: "" },
       { artist: "로이킴(Roy Kim)", title: "봄이와도", genre: ["kpop"], note: "" },
       { artist: "로이킴(Roy Kim)", title: "북두칠성", genre: ["kpop"], note: "" },
