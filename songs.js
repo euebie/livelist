@@ -1083,7 +1083,7 @@ const songs = [
       { artist: "아이유(IU)", title: "기차를 타고", genre: ["kpop"], note: "" },
       { artist: "아이유(IU)", title: "나만 몰랐던 이야기", genre: ["kpop"], note: "" },
       { artist: "아이유(IU)", title: "나의 옛날이야기", genre: ["kpop"], note: "" },
-      { artist: "아이유(IU)", title: "내 꿈은 파티시엘", genre: ["kpop"], note: "" },
+      { artist: "아이유(IU)", title: "내 꿈은 파티시엘", genre: ["kpop","ani"], note: "꿈빛 파티시엘" },
       { artist: "아이유(IU)", title: "너랑 나", genre: ["kpop"], note: "" },
       { artist: "아이유(IU)", title: "너의 의미", genre: ["kpop"], note: "" },
       { artist: "아이유(IU)", title: "드라마", genre: ["kpop"], note: "" },
