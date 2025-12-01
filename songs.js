@@ -83,7 +83,7 @@ const songs = [
       { artist: "그루비룸(GroovyRoom)", title: "My Paradise(Feat. 청하, VINXEN)", genre: ["kpop"], note: "" },
       { artist: "금잔디", title: "서울 가 살자", genre: ["kpop"], note: "" },
       { artist: "금잔디", title: "오라버니", genre: ["kpop"], note: "" },
-      { artist: "기무라 유미(Kimura Yumi)", title: "언제나 몇 번이라도", genre: ["jpop"], note: "" },
+      { artist: "기무라 유미(Kimura Yumi)", title: "언제나 몇 번이라도", genre: ["jpop","ani"], note: "" },
       { artist: "김건모", title: "냄새", genre: ["kpop"], note: "" },
       { artist: "김건모", title: "너에게", genre: ["kpop"], note: "" },
       { artist: "김건모", title: "미안해요", genre: ["kpop"], note: "" },
