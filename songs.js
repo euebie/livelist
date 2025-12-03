@@ -781,7 +781,7 @@ const songs = [
       { artist: "소녀시대(Girls' Generation)", title: "Kissing You", genre: ["kpop"], note: "" },
       { artist: "소녀시대(Girls' Generation)", title: "PARTY", genre: ["kpop"], note: "" },
       { artist: "소녀시대(Girls' Generation)", title: "Run Devil Run", genre: ["kpop"], note: "" },
-      { artist: "소란", title: "미쳤나봐", genre: ["kpop"], note: "" },
+      { artist: "소란(SORAN)", title: "미쳤나봐", genre: ["kpop"], note: "" },
       { artist: "소방차", title: "어젯밤 이야기", genre: ["kpop"], note: "" },
       { artist: "소수빈", title: "쉿", genre: ["kpop"], note: "" },
       { artist: "소야(SOYA)", title: "No One", genre: ["kpop"], note: "" },
