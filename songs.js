@@ -1780,6 +1780,7 @@ const songs = [
       { artist: "지오디(god)", title: "0%", genre: ["kpop"], note: "" },
       { artist: "지오디(god)", title: "길", genre: ["kpop"], note: "" },
       { artist: "지오디(god)", title: "모르죠", genre: ["kpop"], note: "" },
+      { artist: "지오디(god)", title: "미운오리새끼", genre: ["kpop"], note: "" },
       { artist: "지오디(god)", title: "보통날", genre: ["kpop"], note: "" },
       { artist: "지오디(god)", title: "사랑해 그리고 기억해", genre: ["kpop"], note: "" },
       { artist: "지오디(god)", title: "촛불하나", genre: ["kpop"], note: "" },
@@ -2186,6 +2187,7 @@ const songs = [
       // ✅ B
       { artist: "Barbra Streisand", title: "The Way We Were", genre: ["pop"], note: "" },
       { artist: "Barbra Streisand", title: "Woman in Love", genre: ["pop"], note: "" },
+      { artist: "BENEE", title: "Supalonely", genre: ["pop"], note: "" },
       { artist: "Benson Boone", title: "Beautiful Things", genre: ["pop"], note: "" },
       { artist: "Benson Boone", title: "Before You", genre: ["pop"], note: "" },
       { artist: "Beyonce", title: "Irreplaceable", genre: ["pop"], note: "" },
