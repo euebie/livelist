@@ -1238,6 +1238,7 @@ const songs = [
       { artist: "에픽하이(Epik High)", title: "빈차", genre: ["kpop"], note: "" },
       { artist: "에픽하이(Epik High)", title: "트로트", genre: ["kpop"], note: "" },
       { artist: "에픽하이(Epik High)", title: "Fly", genre: ["kpop"], note: "" },
+      { artist: "엑소(EXO)", title: "12월의 기적", genre: ["kpop"], note: "" },
       { artist: "엑스재팬(X-Japan)", title: "Endless Rain", genre: ["jpop"], note: "" },
       { artist: "엔플라잉(N.Flying)", title: "Blue Moon", genre: ["kpop"], note: "" },
       { artist: "엘피쥐(LPG)", title: "캉캉", genre: ["kpop","pay"], note: "유료:300개" },
