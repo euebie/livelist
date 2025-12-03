@@ -2014,6 +2014,7 @@ const songs = [
       { artist: "파파야(Papaya)", title: "내 얘길 들어봐", genre: ["kpop"], note: "" },
       { artist: "파파야(Papaya)", title: "사랑만들기", genre: ["kpop"], note: "" },
       { artist: "패닉", title: "달팽이", genre: ["kpop"], note: "" },
+      { artist: "퍼플 버블(PURPLE BUBBLE)", title: "넛맥(Nutmeg)", genre: ["kpop"], note: "" },
       { artist: "펀치(Punch)", title: "널 사랑했던 한사람", genre: ["kpop"], note: "" },
       { artist: "펀치(Punch)", title: "밤이 되니까", genre: ["kpop"], note: "" },
       { artist: "펀치(Punch)", title: "안부", genre: ["kpop"], note: "" },
