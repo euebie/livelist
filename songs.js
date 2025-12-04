@@ -2293,8 +2293,8 @@ const songs = [
       { artist: "JIDA", title: "Autumn Breeze", genre: ["pop"], note: "" },
       { artist: "John Legend", title: "P.D.A", genre: ["pop"], note: "" },
       { artist: "Jose Feliciano", title: "Feliz Navidad", genre: ["pop","carol"], note: "" },
+      { artist: "Journey", title: "golden hour", genre: ["pop"], note: "" },
       { artist: "Journey", title: "Open Arms", genre: ["pop"], note: "" },
-      { artist: "JVKE", title: "golden hour", genre: ["pop"], note: "" },
 
       // ✅ K
       { artist: "Kansas", title: "Dust in the Wind", genre: ["pop"], note: "" },
