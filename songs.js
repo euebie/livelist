@@ -2290,6 +2290,7 @@ const songs = [
       { artist: "Jeff Bernat", title: "Lemonade", genre: ["pop"], note: "" },
       { artist: "JIDA", title: "Autumn Breeze", genre: ["pop"], note: "" },
       { artist: "John Legend", title: "P.D.A", genre: ["pop"], note: "" },
+      { artist: "Jose Feliciano", title: "Feliz Navidad", genre: ["pop","carol"], note: "" },
       { artist: "Journey", title: "Open Arms", genre: ["pop"], note: "" },
       { artist: "JVKE", title: "golden hour", genre: ["pop"], note: "" },
 
