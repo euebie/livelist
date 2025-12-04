@@ -5,7 +5,6 @@ const songs = [
 
       // ✅ ㄱ
       { artist: "가내수공업", title: "오빠 뭐해요?", genre: ["kpop","pay"], note: "유료:200개" },
-      { artist: "가비엔제이(Gavy NJ​​​​​​​)", title: "낮과 밤(LOVE ALL)", genre: ["kpop"], note: "" },
       { artist: "가비엔제이(Gavy NJ​​​​​​​)", title: "해바라기", genre: ["kpop"], note: "" },
       { artist: "가을방학", title: "가끔 미치도록 네가 안고 싶어질 때가 있어", genre: ["kpop"], note: "" },
       { artist: "간과쓸개", title: "그대 떠나 없는 거리", genre: ["kpop"], note: "" },
