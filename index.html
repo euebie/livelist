@@ -417,6 +417,23 @@
       white-space: normal;
     }
   }
+
+/* ===== 표 열 구분선 ===== */
+tbody td {
+  border-right: 1.5px solid #f1f5f9;
+}
+
+tbody td:last-child {
+  border-right: none;
+}
+
+body[data-theme="dark"] tbody td {
+  border-right: 1.5px solid #1f2937;
+}
+
+body[data-theme="dark"] tbody td:last-child {
+  border-right: none;
+}
   
 </style>
 
@@ -662,6 +679,7 @@ function getFilteredSongs() {
 </script>
 </body>
 </html>
+
 
 
 
