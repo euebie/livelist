@@ -2427,6 +2427,7 @@ const songs = [
 
       // ✅ W
       { artist: "Westlife", title: "My Love", genre: ["pop"], note: "" },
+      { artist: "WHAM!", title: "Last Christmas", genre: ["pop","carol"], note: "" },
       { artist: "Wet Wet Wet", title: "Love Is All Around", genre: ["pop"], note: "" },
       { artist: "Whitney Houston", title: "I Will Always Love You", genre: ["pop"], note: "" },
       { artist: "Wiz Khalifa", title: "See You Again(ft. Charlie Puth)", genre: ["pop"], note: "" },
