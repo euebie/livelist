@@ -575,6 +575,7 @@ const songs = [
       { artist: "박화요비", title: "마취", genre: ["kpop"], note: "" },
       { artist: "박화요비", title: "어떤가요", genre: ["kpop"], note: "" },
       { artist: "박화요비", title: "Lie", genre: ["kpop"], note: "" },
+      { artist: "박효신", title: "1991年, 찬바람이 불던 밤....", genre: ["kpop"], note: "" },
       { artist: "박효신", title: "야생화", genre: ["kpop","pay"], note: "유료:200개" },
       { artist: "박효신", title: "화신", genre: ["kpop"], note: "" },
       { artist: "박효신", title: "Goodbye", genre: ["kpop"], note: "" },
