@@ -1322,6 +1322,7 @@ const songs = [
       { artist: "요루시카(Yorushika)", title: "야행(Night Journey)", genre: ["jpop"], note: "" },
       { artist: "요아리", title: "마지막 재회", genre: ["kpop"], note: "" },
       { artist: "요아소비(YOASOBI)", title: "아마도(Tabun)", genre: ["jpop"], note: "" },
+      { artist: "요아소비(YOASOBI)", title: "아이돌(Idol)", genre: ["jpop","ani"], note: "최애의 아이" },
       { artist: "우기(YUQI)", title: "Green Light", genre: ["kpop"], note: "" },
       { artist: "우기(YUQI)", title: "Radio", genre: ["kpop"], note: "" },
       { artist: "우디(Woody)", title: "혹시 세상에 혼자 남겨진 것 같다면", genre: ["kpop"], note: "" },
