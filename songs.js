@@ -5,7 +5,6 @@ const songs = [
 
       // ✅ ㄱ
       { artist: "가내수공업", title: "오빠 뭐해요?", genre: ["kpop","pay"], note: "유료:200개" },
-      { artist: "가비엔제이(Gavy NJ​​​​​​​)", title: "낮과 밤(LOVE ALL)", genre: ["kpop"], note: "" },
       { artist: "가비엔제이(Gavy NJ​​​​​​​)", title: "해바라기", genre: ["kpop"], note: "" },
       { artist: "가을방학", title: "가끔 미치도록 네가 안고 싶어질 때가 있어", genre: ["kpop"], note: "" },
       { artist: "간과쓸개", title: "그대 떠나 없는 거리", genre: ["kpop"], note: "" },
@@ -2010,6 +2009,7 @@ const songs = [
       { artist: "티아라(T-ara)", title: "거짓말", genre: ["kpop"], note: "" },
       { artist: "티아라(T-ara)", title: "Bo Peep Bo Peep", genre: ["kpop","pay"], note: "유료:100개" },
       { artist: "티아라(T-ara)", title: "Roly-Poly", genre: ["kpop"], note: "" },
+      { artist: "티아라(T-ara), 건지(GUNJI), 샤넌", title: "낮과 밤(LOVE ALL)", genre: ["kpop"], note: "" },
       { artist: "팀", title: "사랑합니다", genre: ["kpop"], note: "" },
 
       // ✅ ㅍ
