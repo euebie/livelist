@@ -25,7 +25,7 @@ const songs = [
       { artist: "거미(GUMMY)", title: "친구라도 될 걸 그랬어", genre: ["kpop"], note: "" },
       { artist: "거미(GUMMY)", title: "I I YO", genre: ["kpop"], note: "" },
       { artist: "거미(GUMMY)", title: "You Are My Everything", genre: ["kpop"], note: "" },
-      { artist: "거미(GUMMY), 바비 킴", title: "러브 레시피", genre: ["kpop"], note: "" },
+      { artist: "거미(GUMMY), 바비 킴(Bobby Kim)", title: "러브 레시피", genre: ["kpop"], note: "" },
       { artist: "거북이", title: "비행기", genre: ["kpop"], note: "" },
       { artist: "거북이", title: "빙고", genre: ["kpop"], note: "" },
       { artist: "건아들", title: "젊은 미소", genre: ["kpop"], note: "" },
