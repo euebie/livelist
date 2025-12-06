@@ -388,7 +388,8 @@ const songs = [
       { artist: "러브홀릭(Loveholic)", title: "Sylvia", genre: ["kpop"], note: "" },
       { artist: "러블리즈(Lovelyz)", title: "삼각형", genre: ["kpop"], note: "" },
       { artist: "러블리즈(Lovelyz)", title: "Ah-Choo", genre: ["kpop"], note: "" },
-      { artist: "러블리즈(Lovelyz)", title: "Destiny", genre: ["kpop"], note: "" },
+      { artist: "러블리즈(Lovelyz)", title: "Dear Santa", genre: ["kpop"], note: "" },
+      { artist: "런치(LUNCH)", title: "Destiny", genre: ["kpop"], note: "" },
       { artist: "럼블피쉬(Rumble Fish)", title: "그대 내게 다시", genre: ["kpop"], note: "" },
       { artist: "럼블피쉬(Rumble Fish)", title: "너 정말이니", genre: ["kpop"], note: "" },
       { artist: "럼블피쉬(Rumble Fish)", title: "비와 당신", genre: ["kpop"], note: "" },
@@ -1058,6 +1059,7 @@ const songs = [
       // ✅ ㅇ
       { artist: "아담(Adam)", title: "세상엔 없는 사랑", genre: ["kpop"], note: "" },
       { artist: "아도(Ado)", title: "나는 최강", genre: ["jpop","ani"], note: "원피스 OST" },
+      { artist: "아무로 나미에(Amuro Namie)", title: "Can You Celebrate?", genre: ["jpop"], note: "" },
       { artist: "아샤트리", title: "아낌없이 널 사랑해 함께 걷는 모든 순간에", genre: ["kpop"], note: "" },
       { artist: "아웃사이더", title: "외톨이", genre: ["kpop","pay"], note: "유료:300개" },
       { artist: "아유미(Ayumi)", title: "Cutie Honey", genre: ["kpop","pay"], note: "유료:100개" },
@@ -1618,6 +1620,7 @@ const songs = [
       { artist: "임창정", title: "소주 한 잔", genre: ["kpop"], note: "" },
       { artist: "임창정", title: "오해", genre: ["kpop"], note: "" },
       { artist: "임창정", title: "Bye", genre: ["kpop"], note: "" },
+      { artist: "임한별", title: "이별하러 가는 길", genre: ["kpop"], note: "" },
       { artist: "임현정", title: "사랑은 봄비처럼... 이별은 겨울비처럼", genre: ["kpop"], note: "" },
 
       // ✅ ㅈ
@@ -1981,6 +1984,7 @@ const songs = [
       { artist: "태연(TAEYEON)", title: "Letter To Myself", genre: ["kpop"], note: "" },
       { artist: "태연(TAEYEON)", title: "Stress", genre: ["kpop"], note: "" },
       { artist: "태연(TAEYEON)", title: "Time Lapse", genre: ["kpop"], note: "" },
+      { artist: "태연(TAEYEON)", title: "U R", genre: ["kpop"], note: "" },
       { artist: "태연(TAEYEON)", title: "Weekend", genre: ["kpop"], note: "" },
       { artist: "터치드(TOUCHED)", title: "반딧불이", genre: ["kpop"], note: "" },
       { artist: "터치드(TOUCHED)", title: "새벽별", genre: ["kpop"], note: "" },
@@ -1988,6 +1992,7 @@ const songs = [
       { artist: "터치드(TOUCHED)", title: "여정", genre: ["kpop"], note: "" },
       { artist: "터치드(TOUCHED)", title: "촛불", genre: ["kpop"], note: "" },
       { artist: "터치드(TOUCHED)", title: "Blue", genre: ["kpop"], note: "" },
+      { artist: "터치드(TOUCHED)", title: "Hi Bully", genre: ["kpop"], note: "" },
       { artist: "테이", title: "사랑은... 향기를 남기고", genre: ["kpop"], note: "" },
       { artist: "테이", title: "이 소설의 끝을 다시 써보려 해", genre: ["kpop"], note: "원곡:한동근" },
       { artist: "토이", title: "내가 너의 곁에 잠시 살았다는 걸", genre: ["kpop"], note: "" },
