@@ -203,6 +203,7 @@ const songs = [
       { artist: "꿈이있는자유", title: "소원", genre: ["kpop"], note: "" },
 
       // ✅ ㄴ
+      { artist: "나래(Narae)", title: "호랑수월가", genre: ["kpop"], note: "" },
       { artist: "나르샤(Narsha)", title: "I'm In Love", genre: ["kpop"], note: "원곡:라디(Ra.D)" },
       { artist: "나미", title: "슬픈 인연", genre: ["kpop"], note: "" },
       { artist: "나비", title: "길에서", genre: ["kpop"], note: "" },
@@ -1139,6 +1140,7 @@ const songs = [
       { artist: "아이유(IU)", title: "Zeze", genre: ["kpop"], note: "" },
       { artist: "아이즈원(IZ*ONE)", title: "Sequence", genre: ["kpop"], note: "" },
       { artist: "아일랜드 시티", title: "다시 돌아갈 수 없어", genre: ["kpop"], note: "" },
+      { artist: "아일릿(ILLIT)", title: "NOT CUTE ANYMORE", genre: ["kpop"], note: "" },
       { artist: "악동클럽", title: "착각", genre: ["kpop"], note: "" },
       { artist: "악뮤(AKMU)", title: "200%", genre: ["kpop"], note: "" },
       { artist: "악뮤(AKMU)", title: "낙하", genre: ["kpop"], note: "" },
