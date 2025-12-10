@@ -37,7 +37,7 @@ const songs = [
       { artist: "경서", title: "밤하늘의 별을", genre: ["kpop"], note: "" },
       { artist: "경서", title: "첫 키스에 내 심장은 120BPM", genre: ["kpop"], note: "" },
       { artist: "경서예지", title: "내일이 찾아오면", genre: ["kpop"], note: "" },
-      { artist: "경서예지", title: "다정히 내 이름을 부르면", genre: ["kpop"], note: "" },
+      { artist: "경서예지", title: "다정히 내 이름을 부르면(여자 Ver.)", genre: ["kpop"], note: "" },
       { artist: "고은희", title: "사랑해요(With 이정란)", genre: ["kpop"], note: "" },
       { artist: "고호경", title: "좋은 사람 있으면 소개시켜줘", genre: ["kpop","pay"], note: "유료:200개" },
       { artist: "공기남녀(AirManGirl)", title: "잠깐만요", genre: ["kpop"], note: "" },
