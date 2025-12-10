@@ -1100,6 +1100,7 @@ const songs = [
       { artist: "아이유(IU)", title: "무릎", genre: ["kpop"], note: "" },
       { artist: "아이유(IU)", title: "미리 메리 크리스마스", genre: ["kpop"], note: "" },
       { artist: "아이유(IU)", title: "미아", genre: ["kpop"], note: "" },
+      { artist: "아이유(IU)", title: "미운 오리", genre: ["kpop"], note: "" },
       { artist: "아이유(IU)", title: "밤편지", genre: ["kpop"], note: "" },
       { artist: "아이유(IU)", title: "복숭아", genre: ["kpop"], note: "" },
       { artist: "아이유(IU)", title: "비밀", genre: ["kpop"], note: "" },
