@@ -2015,7 +2015,8 @@ const songs = [
       { artist: "투투", title: "그대 눈물까지도", genre: ["kpop"], note: "" },
       { artist: "투투", title: "니가 내 것이 되 갈수록", genre: ["kpop"], note: "" },
       { artist: "투투", title: "일과 이분의 일", genre: ["kpop"], note: "" },
-      { artist: "트레저(TREASURE)", title: "YELLOW", genre: ["kpop"], note: "" },
+      { artist: "트랜스픽션(TransFixion)", title: "YELLOW", genre: ["kpop"], note: "" },
+      { artist: "트레저(TREASURE)", title: "내게 돌아와", genre: ["kpop"], note: "" },
       { artist: "트와이스(TWICE)", title: "Cheer Up", genre: ["kpop"], note: "" },
       { artist: "트와이스(TWICE)", title: "Dance The Night Away", genre: ["kpop"], note: "" },
       { artist: "트와이스(TWICE)", title: "Heart Shaker", genre: ["kpop"], note: "" },
@@ -2067,8 +2068,10 @@ const songs = [
       { artist: "핑클(Fin.K.L)", title: "내 남자친구에게", genre: ["kpop"], note: "" },
       { artist: "핑클(Fin.K.L)", title: "영원한 사랑", genre: ["kpop"], note: "" },
       { artist: "핑클(Fin.K.L)", title: "Now", genre: ["kpop"], note: "" },
+      { artist: "핑클(Fin.K.L)", title: "White", genre: ["kpop"], note: "" },
 
       // ✅ ㅎ
+      { artist: "하나(HANA)", title: "Blue Jeans", genre: ["jpop"], note: "" },
       { artist: "하나땅(Hanatan)", title: "마음짓기(Kokoronashi)", genre: ["jpop"], note: "원곡:구미(GUMI)" },
       { artist: "하나땅(Hanatan)", title: "자상무색(Jishou Mushoku)", genre: ["jpop"], note: "원곡:하츠네 미쿠(Hatsune Miku)" },
       { artist: "하동균", title: "그녀를 사랑해줘요", genre: ["kpop"], note: "" },
