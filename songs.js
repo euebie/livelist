@@ -1050,7 +1050,7 @@ const songs = [
       { artist: "싹쓰리", title: "다시 여기 바닷가", genre: ["kpop"], note: "" },
       { artist: "써니사이드(Sunny Side)", title: "첫사랑", genre: ["kpop"], note: "" },
       { artist: "써니힐(SunnyHill)", title: "나의 첫 사랑", genre: ["kpop"], note: "" },
-      { artist: "응답하라 1994 OST", title: "두근두근", genre: ["kpop"], note: "" },
+      { artist: "써니힐(SunnyHill)", title: "두근두근", genre: ["kpop"], note: "" },
       { artist: "썸데이(Someday)", title: "알고 있나요", genre: ["kpop"], note: "" },
       { artist: "쏜애플(THORNAPPLE)", title: "게와 수돗물", genre: ["kpop"], note: "" },
       { artist: "씨스타(Sistar)", title: "Loving U", genre: ["kpop","pay"], note: "유료:100개" },
