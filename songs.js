@@ -396,6 +396,7 @@ const songs = [
       { artist: "럼블피쉬(Rumble Fish)", title: "비와 당신", genre: ["kpop"], note: "" },
       { artist: "럼블피쉬(Rumble Fish)", title: "예감 좋은 날", genre: ["kpop"], note: "" },
       { artist: "레드벨벳(Red Velvet)", title: "미래", genre: ["kpop"], note: "" },
+      { artist: "레드벨벳(Red Velvet), 에스파(aespa)", title: "Beautiful Christmas", genre: ["kpop"], note: "" },
       { artist: "레이나", title: "Home", genre: ["kpop"], note: "" },
       { artist: "레터 플로우", title: "어느 날의 오후(Feat. 뉘뉘)", genre: ["kpop"], note: "" },
       { artist: "려욱(RYEOWOOK)", title: "별이 쏟아지는 밤", genre: ["kpop"], note: "" },
@@ -1902,6 +1903,7 @@ const songs = [
       { artist: "케이시(Kassy)", title: "나 그댈 위해 시 한편을 쓰겠어", genre: ["kpop"], note: "" },
       { artist: "케이시(Kassy)", title: "나의 이유", genre: ["kpop"], note: "" },
       { artist: "케이시(Kassy)", title: "날 사랑한 처음의 너로 돌아와", genre: ["kpop"], note: "" },
+      { artist: "케이시(Kassy)", title: "너의 발걸음에 빛을 비춰줄게", genre: ["kpop"], note: "" },
       { artist: "케이시(Kassy)", title: "사랑이야", genre: ["kpop"], note: "" },
       { artist: "케이시(Kassy)", title: "사실말야내가말야그게그러니까말이야", genre: ["kpop"], note: "" },
       { artist: "케이시(Kassy)", title: "순애보", genre: ["kpop"], note: "" },
@@ -2028,7 +2030,8 @@ const songs = [
       { artist: "티아라(T-ara)", title: "거짓말", genre: ["kpop"], note: "" },
       { artist: "티아라(T-ara)", title: "Bo Peep Bo Peep", genre: ["kpop","pay"], note: "유료:100개" },
       { artist: "티아라(T-ara)", title: "Roly-Poly", genre: ["kpop"], note: "" },
-      { artist: "티아라(T-ara), 건지(GUNJI), 샤넌", title: "낮과 밤(LOVE ALL)", genre: ["kpop"], note: "" },
+      { artist: "티파니(Tiffany)", title: "나 혼자서", genre: ["kpop"], note: "" },
+      { artist: "팀", title: "사랑합니다", genre: ["kpop"], note: "" },
       { artist: "팀", title: "사랑합니다", genre: ["kpop"], note: "" },
 
       // ✅ ㅍ
