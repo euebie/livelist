@@ -1545,6 +1545,7 @@ const songs = [
       { artist: "이아영", title: "사랑했단 말이야", genre: ["kpop"], note: "" },
       { artist: "이아영", title: "오늘은 헤어지는 날이죠", genre: ["kpop"], note: "" },
       { artist: "이아영", title: "운명(2025)(Cover Ver.)", genre: ["kpop"], note: "원곡:먼데이 키즈(Monday Kiz)" },
+      { artist: "이아영", title: "이별이라는 말은 안돼(Cover Ver.)", genre: ["kpop"], note: "원곡:윤도(Yoon Do)" },
       { artist: "이아영", title: "조금 더 일찍 이별할 걸 그랬어", genre: ["kpop"], note: "" },
       { artist: "이안", title: "물고기자리", genre: ["kpop"], note: "" },
       { artist: "이연실", title: "목로주점", genre: ["kpop"], note: "" },
