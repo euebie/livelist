@@ -854,8 +854,10 @@ const songs = [
       { artist: "스웨덴세탁소", title: "좋아하고만 싶어(Vocal. 위수(WISUE))", genre: ["kpop"], note: "" },
       { artist: "스웨덴세탁소", title: "Happy Birthday Waltz", genre: ["kpop"], note: "" },
       { artist: "스탠딩 에그", title: "넌 이별 난 아직", genre: ["kpop"], note: "" },
+      { artist: "스탠딩 에그", title: "널 사랑했을까", genre: ["kpop"], note: "" },
       { artist: "스탠딩 에그", title: "무슨 생각해", genre: ["kpop"], note: "" },
       { artist: "스탠딩 에그", title: "무지개", genre: ["kpop"], note: "" },
+      { artist: "스탠딩 에그", title: "바보야 (With 이해리 of 다비치)", genre: ["kpop"], note: "" },
       { artist: "스탠딩 에그", title: "사랑한대", genre: ["kpop"], note: "" },
       { artist: "스탠딩 에그", title: "여름밤에 우린", genre: ["kpop"], note: "" },
       { artist: "스탠딩 에그", title: "오래된 노래", genre: ["kpop"], note: "" },
@@ -2410,6 +2412,7 @@ const songs = [
       { artist: "Queen", title: "Love Of My Life", genre: ["pop"], note: "" },
 
       // ✅ R
+      { artist: "Rachael Yamagata", title: "Be Be Your Love", genre: ["pop"], note: "" },
       { artist: "Rachael Yamagata", title: "Over and Over", genre: ["pop"], note: "" },
       { artist: "Radiohead", title: "Creep", genre: ["pop"], note: "" },
       { artist: "Radiohead", title: "No Surprises", genre: ["pop"], note: "" },
