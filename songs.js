@@ -341,7 +341,8 @@ const songs = [
       { artist: "뎁트(Dept), 서액터(Seoactor)", title: "Why Do You Love Me", genre: ["kpop"], note: "" },
       { artist: "도경수(D.O.)", title: "별 떨어진다", genre: ["kpop"], note: "" },
       { artist: "도나(DONNA)", title: "희망을 품는 병", genre: ["kpop"], note: "" },
-      { artist: "도로시 밴드(Dorothy)", title: "소풍", genre: ["kpop"], note: "" },
+      { artist: "도로시 밴드(Dorothy)", title: "추억속의 그대", genre: ["kpop"], note: "원곡:황치훈" },
+      { artist: "도시(dosii)", title: "소풍", genre: ["kpop"], note: "" },
       { artist: "도시의 그림자", title: "이 어둠의 이 슬픔", genre: ["kpop"], note: "" },
       { artist: "도시의 그림자", title: "타인의 거리", genre: ["kpop"], note: "" },
       { artist: "도원경", title: "다시 사랑한다면", genre: ["kpop"], note: "" },
@@ -387,6 +388,7 @@ const songs = [
       { artist: "러브홀릭(Loveholic)", title: "화분", genre: ["kpop"], note: "" },
       { artist: "러브홀릭(Loveholic)", title: "Loveholic", genre: ["kpop"], note: "" },
       { artist: "러브홀릭(Loveholic)", title: "Sylvia", genre: ["kpop"], note: "" },
+      { artist: "러브홀릭스(Loveholics)", title: "Butterfly", genre: ["kpop"], note: "" },
       { artist: "러블리즈(Lovelyz)", title: "삼각형", genre: ["kpop"], note: "" },
       { artist: "러블리즈(Lovelyz)", title: "Ah-Choo", genre: ["kpop"], note: "" },
       { artist: "러블리즈(Lovelyz)", title: "Dear Santa", genre: ["kpop"], note: "" },
@@ -2048,6 +2050,7 @@ const songs = [
       { artist: "파파야(Papaya)", title: "사랑만들기", genre: ["kpop"], note: "" },
       { artist: "패닉", title: "달팽이", genre: ["kpop"], note: "" },
       { artist: "퍼플 버블(PURPLE BUBBLE)", title: "넛맥(Nutmeg)", genre: ["kpop"], note: "" },
+      { artist: "펀치(Punch)", title: "그대만이", genre: ["kpop"], note: "" },
       { artist: "펀치(Punch)", title: "널 사랑했던 한사람", genre: ["kpop"], note: "" },
       { artist: "펀치(Punch)", title: "밤이 되니까", genre: ["kpop"], note: "" },
       { artist: "펀치(Punch)", title: "안부", genre: ["kpop"], note: "" },
@@ -2464,6 +2467,7 @@ const songs = [
       { artist: "The Mamas & The Papas", title: "Dream A Little Dream Of Me", genre: ["pop"], note: "" },
       { artist: "The Police", title: "Every Brethe You Take", genre: ["pop"], note: "" },
       { artist: "The Pussycat Dolls", title: "Sway", genre: ["pop"], note: "" },
+      { artist: "The Ronettes", title: "Be My Baby", genre: ["pop"], note: "" },
       { artist: "The Stylistics", title: "Because I Love You Girl", genre: ["pop"], note: "" },
 
       // ✅ U
