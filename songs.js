@@ -80,6 +80,7 @@ const songs = [
       { artist: "그네", title: "꽃이 진다고 그대를 잊은 적 없다", genre: ["kpop"], note: "" },
       { artist: "그래쓰", title: "Babyblue", genre: ["kpop"], note: "" },
       { artist: "그루비룸(GroovyRoom)", title: "My Paradise(Feat. 청하, VINXEN)", genre: ["kpop"], note: "" },
+      { artist: "그리즐리(Grizzly)", title: "보통의 하루", genre: ["kpop"], note: "" },
       { artist: "금잔디", title: "서울 가 살자", genre: ["kpop"], note: "" },
       { artist: "금잔디", title: "오라버니", genre: ["kpop"], note: "" },
       { artist: "기무라 유미(Kimura Yumi)", title: "언제나 몇 번이라도", genre: ["jpop","ani"], note: "센과 치히로의 행방불명 OST" },
