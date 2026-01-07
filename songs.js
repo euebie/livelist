@@ -1012,6 +1012,7 @@ const songs = [
       { artist: "심규선(Lucia)", title: "폭풍의 언덕", genre: ["kpop"], note: "" },
       { artist: "심규선(Lucia)", title: "피어나", genre: ["kpop"], note: "" },
       { artist: "심규선(Lucia)", title: "필로소피", genre: ["kpop"], note: "" },
+      { artist: "심규선(Lucia)", title: "한사람", genre: ["kpop"], note: "" },
       { artist: "심규선(Lucia)", title: "해야할 일", genre: ["kpop"], note: "" },
       { artist: "심규선(Lucia)", title: "혜성충돌", genre: ["kpop"], note: "" },
       { artist: "심규선(Lucia)", title: "화조도", genre: ["kpop"], note: "" },
