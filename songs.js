@@ -2507,6 +2507,7 @@ const songs = [
 
       // ✅ Y
       { artist: "YUI", title: "Again", genre: ["pop"], note: "" },
+      { artist: "Yung Kai", title: "Blue", genre: ["pop"], note: "" },
 
       // ✅ Z
 
