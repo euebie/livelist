@@ -1176,6 +1176,7 @@ const songs = [
       { artist: "악뮤(AKMU)", title: "Give Love", genre: ["kpop"], note: "" },
       { artist: "#안녕", title: "한 걸음씩 멀어지는 너에게", genre: ["kpop"], note: "" },
       { artist: "안녕바다", title: "별 빛이 내린다", genre: ["kpop"], note: "" },
+      { artist: "안솔희", title: "너무 귀여워", genre: ["kpop"], note: "" },
       { artist: "안신애", title: "Confusion", genre: ["kpop"], note: "" },
       { artist: "안예은", title: "교복에서 부케까지", genre: ["kpop"], note: "" },
       { artist: "안예은", title: "달그림자", genre: ["kpop"], note: "" },
