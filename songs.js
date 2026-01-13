@@ -63,6 +63,7 @@ const songs = [
       { artist: "권진아", title: "연인", genre: ["kpop"], note: "" },
       { artist: "권진아", title: "운이 좋았지", genre: ["kpop"], note: "" },
       { artist: "권진아", title: "위로", genre: ["kpop"], note: "" },
+      { artist: "권진아", title: "이번 겨울", genre: ["kpop"], note: "" },
       { artist: "권진아", title: "이별 뒷면", genre: ["kpop"], note: "" },
       { artist: "권진아", title: "잘가", genre: ["kpop"], note: "" },
       { artist: "권진아", title: "진심이었던 사람만 바보가 돼", genre: ["kpop"], note: "" },
