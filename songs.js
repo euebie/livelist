@@ -1896,7 +1896,7 @@ const songs = [
       { artist: "최유리", title: "우리의 언어", genre: ["kpop"], note: "" },
       { artist: "최유리", title: "이름", genre: ["kpop"], note: "" },
       { artist: "최유리", title: "잘 지내자, 우리", genre: ["kpop"], note: "" },
-      { artist: "최유리", title: "", genre: ["kpop"], note: "" },
+      { artist: "최유리", title: "툭", genre: ["kpop"], note: "" },
       { artist: "최재훈", title: "비의 랩소디", genre: ["kpop"], note: "" },
       { artist: "최재훈", title: "함께 있으면 좋을 사람", genre: ["kpop"], note: "" },
       { artist: "최정윤", title: "사라져", genre: ["kpop"], note: "" },
