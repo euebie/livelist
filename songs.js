@@ -451,8 +451,8 @@ const songs = [
 
       // ✅ ㅁ
       { artist: "마골피", title: "비행소녀", genre: ["kpop"], note: "" },
-      { artist: "마로니에", title: "동숭로에서", genre: ["kpop"], note: "" },
-      { artist: "마로니에", title: "칵테일 사랑", genre: ["kpop"], note: "" },
+      { artist: "마로니에(Maronnier)", title: "동숭로에서", genre: ["kpop"], note: "" },
+      { artist: "마로니에(Maronnier)", title: "칵테일 사랑", genre: ["kpop"], note: "" },
       { artist: "마리탱(Maritaeng)", title: "가장 예쁜 별을 너에게", genre: ["kpop"], note: "" },
       { artist: "마리탱(Maritaeng)", title: "별 보다 예쁜 너", genre: ["kpop"], note: "" },
       { artist: "마마무(MAMAMOO)", title: "Decalcomanie", genre: ["kpop"], note: "" },
