@@ -410,7 +410,7 @@ const songs = [
       { artist: "레이나", title: "Home", genre: ["kpop"], note: "" },
       { artist: "레터 플로우", title: "어느 날의 오후(Feat. 뉘뉘)", genre: ["kpop"], note: "" },
       { artist: "려욱(RYEOWOOK)", title: "별이 쏟아지는 밤", genre: ["kpop"], note: "" },
-      { artist: "로꼬(Loco)", title: "우연히 봄(Feat. 유주(여자친구))", genre: ["kpop"], note: "" },
+      { artist: "로꼬(Loco), 유주(YUJU)", title: "우연히 봄", genre: ["kpop"], note: "" },
       { artist: "로시", title: "이 별", genre: ["kpop"], note: "원곡:길구봉구" },
       { artist: "로시", title: "Stars", genre: ["kpop"], note: "" },
       { artist: "로엘(Roel)", title: "담배(한국어 Ver.)", genre: ["kpop","jpop"], note: "원곡:코레사와(Koresawa)" },
