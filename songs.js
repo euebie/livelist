@@ -50,6 +50,7 @@ const songs = [
       { artist: "공일오비(015B)", title: "텅 빈 거리에서", genre: ["kpop"], note: "" },
       { artist: "공일오비(015B)", title: "H에게", genre: ["kpop"], note: "" },
       { artist: "과나(gwana)", title: "그거 아세요?", genre: ["kpop","pay"], note: "유료:100개" },
+      { artist: "과나(gwana)", title: "맞춤법 절대 안 틀리는 노래", genre: ["kpop","pay"], note: "유료:100개" },
       { artist: "곽진언", title: "자랑", genre: ["kpop"], note: "" },
       { artist: "권인하", title: "사랑이 사랑을", genre: ["kpop"], note: "" },
       { artist: "권진아", title: "가랑비", genre: ["kpop"], note: "" },
