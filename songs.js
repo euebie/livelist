@@ -145,6 +145,7 @@ const songs = [
       { artist: "김수진", title: "두치와 뿌꾸", genre: ["kpop","ani"], note: "두치와 뿌꾸" },
       { artist: "김수철", title: "별리", genre: ["kpop"], note: "" },
       { artist: "김수현", title: "Dreaming", genre: ["kpop"], note: "" },
+      { artist: "김아름", title: "선", genre: ["kpop"], note: "" },
       { artist: "김아중", title: "Beauriful Girl", genre: ["kpop"], note: "" },
       { artist: "김아중", title: "Maria", genre: ["kpop"], note: "" },
       { artist: "김연우", title: "나와 같다면", genre: ["kpop"], note: "원곡:김장훈" },
@@ -2250,6 +2251,7 @@ const songs = [
       { artist: "휘인(Whee In)", title: "Here I Am", genre: ["kpop"], note: "" },
       { artist: "희주", title: "여름, 그리고 너", genre: ["kpop"], note: "" },
       { artist: "히라이 켄(Hirai Ken)", title: "눈을 감고서(Hitomi wo Tojite)", genre: ["jpop"], note: "" },
+      { artist: "히로타니 준코(Hirotani Junko)", title: "뱃사람(Funanori)", genre: ["jpop","ani"], note: "무책임함장 테일러" },
 
       // ✅ 숫자
       { artist: "0720", title: "우산, 같이", genre: ["kpop"], note: "" },
