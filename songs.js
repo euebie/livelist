@@ -1019,6 +1019,7 @@ const songs = [
       { artist: "심규선(Lucia)", title: "외로워 본", genre: ["kpop"], note: "" },
       { artist: "심규선(Lucia)", title: "요란", genre: ["kpop"], note: "" },
       { artist: "심규선(Lucia)", title: "우리 앞의 세계", genre: ["kpop"], note: "" },
+      { artist: "심규선(Lucia)", title: "우리는 언젠가 틀림없이 죽어요", genre: ["kpop"], note: "" },
       { artist: "심규선(Lucia)", title: "월령", genre: ["kpop"], note: "" },
       { artist: "심규선(Lucia)", title: "음악가의 연인", genre: ["kpop"], note: "" },
       { artist: "심규선(Lucia)", title: "이것은 아마 마지막 꽃잎", genre: ["kpop"], note: "" },
