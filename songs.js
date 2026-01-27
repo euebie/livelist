@@ -1655,6 +1655,7 @@ const songs = [
       { artist: "이찬혁(AKMU)", title: "멸종위기사랑", genre: ["kpop"], note: "" },
       { artist: "이창섭", title: "천상연", genre: ["kpop"], note: "" },
       { artist: "이츠(IT'S)", title: "사라질 사람, 사라질 사랑", genre: ["kpop"], note: "" },
+      { artist: "이츠(IT'S)", title: "영화", genre: ["kpop"], note: "" },
       { artist: "이클립스(ECLIPSE)", title: "소나기", genre: ["kpop"], note: "" },
       { artist: "이하이", title: "한숨", genre: ["kpop"], note: "" },
       { artist: "이하이", title: "Rose", genre: ["kpop"], note: "" },
