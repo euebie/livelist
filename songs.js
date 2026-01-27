@@ -2495,6 +2495,7 @@ const songs = [
       { artist: "Radiohead", title: "Creep", genre: ["pop"], note: "" },
       { artist: "Radiohead", title: "No Surprises", genre: ["pop"], note: "" },
       { artist: "Rainbow", title: "The Temple Of The King", genre: ["pop"], note: "" },
+      { artist: "RASELHITS", title: "MOON VEIL", genre: ["pop"], note: "" },
       { artist: "Ratatouille OST", title: "Le Festin", genre: ["pop"], note: "" },
       { artist: "Roberta Flack, Peabo Bryson", title: "Tonight I Celebrate My Love", genre: ["pop"], note: "" },
       { artist: "Rockwell", title: "Knife", genre: ["pop"], note: "" },
