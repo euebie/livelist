@@ -496,6 +496,7 @@ const songs = [
       { artist: "문문", title: "결혼", genre: ["kpop"], note: "" },
       { artist: "문차일드(Moonchild)", title: "태양은 가득히", genre: ["kpop"], note: "" },
       { artist: "미강(MIKANG)", title: "유령과 투명인간", genre: ["kpop"], note: "" },
+      { artist: "미구(migoo)", title: "scabiosa", genre: ["kpop"], note: "" },
       { artist: "미노이(meenoi)", title: "너의 답장을 기다리다가 기분이 안좋아졌어", genre: ["kpop"], note: "" },
       { artist: "미노이(meenoi)", title: "Busy Guy", genre: ["kpop"], note: "" },
       { artist: "미로(Miiro)", title: "계절범죄", genre: ["kpop"], note: "" },
