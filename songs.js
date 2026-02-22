@@ -9,6 +9,7 @@ const songs = [
       { artist: "가을방학", title: "가끔 미치도록 네가 안고 싶어질 때가 있어", genre: ["kpop"], note: "" },
       { artist: "간과쓸개", title: "그대 떠나 없는 거리", genre: ["kpop"], note: "" },
       { artist: "감스트, 탱구", title: "이젠 안녕", genre: ["kpop"], note: "" },
+      { artist: "감성주파수", title: "마흔이 넘고 나니", genre: ["kpop"], note: "AI곡" },
       { artist: "강수지", title: "보랏빛 향기", genre: ["kpop"], note: "" },
       { artist: "강수지", title: "혼자만의 겨울", genre: ["kpop"], note: "" },
       { artist: "강수지", title: "흩어진 나날들", genre: ["kpop"], note: "" },
@@ -875,6 +876,7 @@ const songs = [
       { artist: "숙희", title: "틈", genre: ["kpop"], note: "" },
       { artist: "순순희", title: "그대가 내 안에 박혔다", genre: ["kpop"], note: "원곡:황치열" },
       { artist: "순순희", title: "내 첫사랑이자 마지막 사랑", genre: ["kpop"], note: "" },
+      { artist: "순순희", title: "살기 위해서", genre: ["kpop"], note: "원곡:노을" },
       { artist: "술제이(Sool J), 조현영", title: "오빠야", genre: ["kpop","pay"], note: "유료:300개" },
       { artist: "슈가볼(Sugarbowl)", title: "농담 반 진담 반", genre: ["kpop"], note: "" },
       { artist: "슈퍼주니어(SUPER JUNIOR)", title: "Miracle", genre: ["kpop"], note: "" },
@@ -1962,6 +1964,7 @@ const songs = [
 
       // ✅ ㅋ
       { artist: "카더가든", title: "가까운 듯 먼 그대여", genre: ["kpop"], note: "" },
+      { artist: "카더가든", title: "나무", genre: ["kpop"], note: "" },
       { artist: "카더가든", title: "명동콜링", genre: ["kpop"], note: "" },
       { artist: "카더가든", title: "휴게소", genre: ["kpop"], note: "" },
       { artist: "카디(KARDI)", title: "그리다", genre: ["kpop"], note: "" },
@@ -2091,6 +2094,7 @@ const songs = [
       { artist: "테이", title: "사랑은... 향기를 남기고", genre: ["kpop"], note: "" },
       { artist: "테이", title: "이 소설의 끝을 다시 써보려 해", genre: ["kpop"], note: "원곡:한동근" },
       { artist: "토이", title: "내가 너의 곁에 잠시 살았다는 걸", genre: ["kpop"], note: "" },
+      { artist: "토이", title: "뜨거운 안녕(스텔라장 기타 Ver.)", genre: ["kpop"], note: "" },
       { artist: "토이", title: "좋은 사람", genre: ["kpop"], note: "" },
       { artist: "투애니원(2NE1)", title: "그리워해요", genre: ["kpop"], note: "" },
       { artist: "투앤비(2NB)", title: "여자이니까", genre: ["kpop"], note: "" },
